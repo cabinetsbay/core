@@ -1,7 +1,6 @@
 <?php
 namespace CabinetsBay\Core\Plugin\Magento\Variable\Block\System\Variable\Edit;
 use Magento\Framework\Data\Form as F;
-use Magento\Framework\Data\Form\Element\Collection as EC;
 use Magento\Framework\Data\Form\Element\Fieldset as Fs;
 use Magento\Framework\Data\Form\Element\Text;
 use Magento\Variable\Block\System\Variable\Edit\Form as Sb;
