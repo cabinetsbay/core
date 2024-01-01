@@ -13,6 +13,11 @@ because it violates the following Content Security Policy directive "script-src 
 https://github.com/cabinetsbay/site/issues/61 -->
 				<value id='*.affirm.com' type='host'>*.affirm.com</value>
 <!-- 2024-01-01
+«Refused to load the script 'https://static.hotjar.com/c/hotjar-3661092.js?sv=7'
+because it violates the following Content Security Policy directive "script-src <…>"»:
+https://github.com/cabinetsbay/site/issues/65 -->
+				<value id='*.hotjar.com' type='host'>*.hotjar.com</value>
+<!-- 2024-01-01
 1) «Refused to load the script 'https://static.zdassets.com/web_widget/classic/latest/web-widget-main-1bfc6fa.js'
 because it violates the following Content Security Policy directive "script-src <…>"»:
 https://github.com/cabinetsbay/site/issues/69
@@ -28,7 +33,7 @@ https://github.com/cabinetsbay/site/issues/66
 5) «Refused to load the script 'https://static.zdassets.com/ekr/snippet.js?key=d788c408-e1a5-470a-8863-5e48621b2fba'
 because it violates the following Content Security Policy directive "script-src <…>"»:
 https://github.com/cabinetsbay/site/issues/60 -->
-				<value id='static.zdassets.com' type='host'>static.zdassets.com</value>
+				<value id='*.zdassets.com' type='host'>*.zdassets.com</value>
 			</values>
 		</policy>
 	</policies>
