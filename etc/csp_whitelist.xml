@@ -21,6 +21,11 @@ because it violates the following Content Security Policy directive "script-src 
 https://github.com/cabinetsbay/site/issues/64 -->
 				<value id='*.hotjar.com' type='host'>*.hotjar.com</value>
 <!-- 2024-01-01
+«Refused to load the script 'https://invitejs.trustpilot.com/tp.min.js'
+because it violates the following Content Security Policy directive "script-src <…>"»:
+https://github.com/cabinetsbay/site/issues/63 -->
+				<value id='*.trustpilot.com' type='host'>*.trustpilot.com</value>
+<!-- 2024-01-01
 1) «Refused to load the script 'https://static.zdassets.com/web_widget/classic/latest/web-widget-main-1bfc6fa.js'
 because it violates the following Content Security Policy directive "script-src <…>"»:
 https://github.com/cabinetsbay/site/issues/69
