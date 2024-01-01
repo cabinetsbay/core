@@ -10,6 +10,11 @@
 https://github.com/cabinetsbay/site/issues/55-->
 		<policy id='connect-src'>
 			<values>
+<!-- 2024-01-01
+«Refused to load the script 'https://cabinetsbay.zendesk.com/embeddable/config'
+because it violates the following Content Security Policy directive: "connect-src <…>"»:
+https://github.com/cabinetsbay/site/issues/77 -->
+				<value id='cabinetsbay.zendesk.com' type='host'>cabinetsbay.zendesk.com</value>
 			</values>
 		</policy>
 <!-- 2024-01-01
