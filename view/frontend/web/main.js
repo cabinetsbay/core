@@ -2,17 +2,21 @@
 // 1) "«jQuery is not defined» on my workstation": https://github.com/cabinetsbay/site/issues/53
 // 2) "Refactor design/head/includes scripts to a Magento module": https://github.com/cabinetsbay/core/issues/1
 define(['jquery', 'domReady!'], function($) {
-	$('#showimg3411').on('onmouseover', function() {
-		document.getElementById('img3411').style.display = 'block';
-		document.getElementById('img4036').style.display = 'none';
-		document.getElementById('showimg3411').classList.add('act');
-		document.getElementById('showimg4036').classList.remove('act');
+	const $img3411 = $('#img3411');
+	const $img4036 = $('#img4036');
+	const $showimg3411 = $('#showimg3411');
+	const $showimg4036 = $('#showimg4036');
+	$showimg3411.on('onmouseover', function() {
+		$img3411.show();
+		$img4036.hide();
+		$showimg3411.addClass('act');
+		$showimg4036.removeClass('act');
 	});
-	$('#showimg4036').on('onmouseover', function() {
-		document.getElementById('img4036').style.display = 'block';
-		document.getElementById('img3411').style.display = 'none';
-		document.getElementById('showimg4036').classList.add('act');
-		document.getElementById('showimg3411').classList.remove('act');
+	$showimg4036.on('onmouseover', function() {
+		$img3411.hide();
+		$img4036.show();
+		$showimg3411.removeClass('act');
+		$showimg4036.addClass('act');
 	});
 	if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
 		$('.products.wrapper.list').removeClass('products-list').addClass('products-grid');
