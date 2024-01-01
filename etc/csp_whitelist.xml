@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!-- 2024-01-01 -->
+<csp_whitelist
+	xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' 
+	xsi:noNamespaceSchemaLocation='urn:magento:module:Magento_Csp:etc/csp_whitelist.xsd'
+>
+	<policies>
+		<policy id='script-src'>
+			<values>
+<!-- 2023-08-05
+«Refused to load the script 'https://cdn1.affirm.com/js/v2/affirm.js'
+because it violates the following Content Security Policy directive "script-src <…>"»:
+https://github.com/cabinetsbay/site/issues/61 -->
+				<value id='*.affirm.com' type='host'>*.affirm.com</value>
+			</values>
+		</policy>
+	</policies>
+</csp_whitelist>
