@@ -16,6 +16,11 @@ because it violates the following Content Security Policy directive: "connect-sr
 https://github.com/cabinetsbay/site/issues/74 -->
 				<value id='*.affirm.com' type='host'>*.affirm.com</value>
 <!-- 2024-01-01
+«Refused to load the script 'https://www.googleadservices.com/pagead/conversion/670208216/wcm?<…>'
+because it violates the following Content Security Policy directive: "connect-src <…>"»:
+https://github.com/cabinetsbay/site/issues/75 -->
+				<value id='*.googleadservices.com' type='host'>*.googleadservices.com</value>
+<!-- 2024-01-01
 «Refused to load the script 'https://ekr.zdassets.com/compose/<…>'
 because it violates the following Content Security Policy directive: "connect-src <…>"»:
 https://github.com/cabinetsbay/site/issues/73 -->
