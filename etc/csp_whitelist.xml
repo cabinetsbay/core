@@ -42,7 +42,7 @@ https://github.com/cabinetsbay/site/issues/77 -->
 «Refused to load the script 'wss://widget-mediator.zopim.com/s/W/ws/<…>'
 because it violates the following Content Security Policy directive: "connect-src <…>"»:
 https://github.com/cabinetsbay/site/issues/78 -->
-				<value id='*.zopim.com' type='host'>*.zopim.com</value>
+				<value id='wss://widget-mediator.zopim.com' type='host'>wss://widget-mediator.zopim.com</value>
 			</values>
 		</policy>
 <!-- 2024-01-01
