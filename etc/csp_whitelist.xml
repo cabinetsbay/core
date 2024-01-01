@@ -71,7 +71,7 @@ https://github.com/cabinetsbay/site/issues/81 -->
 <!-- 2024-01-01
 «Refused to load media from '<URL>' because it violates the following Content Security Policy directive: "media-src <…>"»:
 https://github.com/cabinetsbay/site/issues/83 -->
-		<policy id='frame-src'>
+		<policy id='media-src'>
 			<values>
 			</values>
 		</policy>
