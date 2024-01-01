@@ -14,10 +14,7 @@ define(['jquery', 'domReady!'], function($) {
 		document.getElementById('showimg4036').classList.add('act');
 		document.getElementById('showimg3411').classList.remove('act');
 	};
-	if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)){
+	if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
 		$('.products.wrapper.list').removeClass('products-list').addClass('products-grid');
-	}
-	else {
-		$('.products.wrapper.list').removeClass('products-grid').addClass('products-list');
 	}
 });
