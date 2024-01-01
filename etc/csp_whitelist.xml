@@ -69,6 +69,13 @@ https://github.com/cabinetsbay/site/issues/81 -->
 			</values>
 		</policy>
 <!-- 2024-01-01
+«Refused to load media from '<URL>' because it violates the following Content Security Policy directive: "media-src <…>"»:
+https://github.com/cabinetsbay/site/issues/83 -->
+		<policy id='frame-src'>
+			<values>
+			</values>
+		</policy>
+<!-- 2024-01-01
 «Refused to load the script '<URL>' because it violates the following Content Security Policy directive: "script-src <…>"»:
 https://github.com/cabinetsbay/site/issues/54 -->
 		<policy id='script-src'>
