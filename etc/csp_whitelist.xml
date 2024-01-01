@@ -35,6 +35,11 @@ https://github.com/cabinetsbay/site/issues/73 -->
 because it violates the following Content Security Policy directive: "connect-src <…>"»:
 https://github.com/cabinetsbay/site/issues/77 -->
 				<value id='cabinetsbay.zendesk.com' type='host'>cabinetsbay.zendesk.com</value>
+<!-- 2024-01-01
+«Refused to load the script 'wss://widget-mediator.zopim.com/s/W/ws/<…>'
+because it violates the following Content Security Policy directive: "connect-src <…>"»:
+https://github.com/cabinetsbay/site/issues/78 -->
+				<value id='*.zopim.com' type='host'>*.zopim.com</value>
 			</values>
 		</policy>
 <!-- 2024-01-01
