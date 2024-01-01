@@ -7,7 +7,7 @@
 	<policies>
 <!-- 2024-01-01
 «Refused to load the script '<URL>' because it violates the following Content Security Policy directive: "connect-src <…>"»:
-https://github.com/cabinetsbay/site/issues/55-->
+https://github.com/cabinetsbay/site/issues/55 -->
 		<policy id='connect-src'>
 			<values>
 <!-- 2024-01-01
@@ -43,6 +43,18 @@ https://github.com/cabinetsbay/site/issues/77 -->
 because it violates the following Content Security Policy directive: "connect-src <…>"»:
 https://github.com/cabinetsbay/site/issues/78 -->
 				<value id='wss://widget-mediator.zopim.com' type='host'>wss://widget-mediator.zopim.com</value>
+			</values>
+		</policy>
+<!-- 2024-01-01
+«Refused to load the script '<URL>' because it violates the following Content Security Policy directive: "font-src <…>"»:
+https://github.com/cabinetsbay/site/issues/56 -->
+		<policy id='font-src'>
+			<values>
+<!-- 2024-01-01
+«Refused to load the script 'https://use.typekit.net/af/<…>'
+because it violates the following Content Security Policy directive: "font-src <…>"»:
+https://github.com/cabinetsbay/site/issues/80 -->
+				<value id='use.typekit.net' type='host'>use.typekit.net</value>
 			</values>
 		</policy>
 <!-- 2024-01-01
