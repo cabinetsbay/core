@@ -1,0 +1,15 @@
+<?xml version='1.0'?>
+<page 
+	xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance'
+	xsi:noNamespaceSchemaLocation='urn:magento:framework:View/Layout/etc/page_configuration.xsd'
+>
+	<body>
+<!-- 2024-01-01 "How to add a custom content at the end of the HTML <head> section": https://mage2.pro/t/328 -->
+		<referenceBlock name='head.additional'>
+<!-- 2024-01-01
+1) "Refactor `design/head/includes` scripts to a Magento module": https://github.com/cabinetsbay/core/issues/1
+2) "How is the `design/head/includes` contents rendered?": https://mage2.pro/t/6391 -->
+			<block class='Magento\Framework\View\Element\Template' template='CabinetsBay_Core::head.phtml'/>
+		</referenceBlock>
+	</body>
+</page>
