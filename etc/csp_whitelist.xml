@@ -73,6 +73,11 @@ https://github.com/cabinetsbay/site/issues/81 -->
 https://github.com/cabinetsbay/site/issues/83 -->
 		<policy id='media-src'>
 			<values>
+<!-- 2024-01-01
+«Refused to load media from 'https://static.zdassets.com/web_widget/classic/latest/<…>.mp3'
+because it violates the following Content Security Policy directive: "media-src <…>"»:
+https://github.com/cabinetsbay/site/issues/84 -->
+				<value id='*.zdassets.com' type='host'>*.zdassets.com</value>
 			</values>
 		</policy>
 <!-- 2024-01-01
