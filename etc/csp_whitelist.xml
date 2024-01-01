@@ -62,6 +62,10 @@ https://github.com/cabinetsbay/site/issues/80 -->
 https://github.com/cabinetsbay/site/issues/81 -->
 		<policy id='frame-src'>
 			<values>
+<!-- 2024-01-01
+«Refused to frame 'https://td.doubleclick.net/' because it violates the following Content Security Policy directive:
+"frame-src <…>"»: https://github.com/cabinetsbay/site/issues/82 -->
+				<value id='*.doubleclick.net' type='host'>*.doubleclick.net</value>
 			</values>
 		</policy>
 <!-- 2024-01-01
