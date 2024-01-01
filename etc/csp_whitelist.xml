@@ -5,6 +5,9 @@
 	xsi:noNamespaceSchemaLocation='urn:magento:module:Magento_Csp:etc/csp_whitelist.xsd'
 >
 	<policies>
+<!-- 2024-01-01
+«Refused to load the script '<URL>' because it violates the following Content Security Policy directive: "script-src <…>"»:
+https://github.com/cabinetsbay/site/issues/54 -->
 		<policy id='script-src'>
 			<values>
 <!-- 2024-01-01
