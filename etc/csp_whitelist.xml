@@ -13,6 +13,11 @@ because it violates the following Content Security Policy directive "script-src 
 https://github.com/cabinetsbay/site/issues/61 -->
 				<value id='*.affirm.com' type='host'>*.affirm.com</value>
 <!-- 2024-01-01
+«Refused to load the script 'https://googleads.g.doubleclick.net/pagead/viewthroughconversion/670208216/?<…>'
+because it violates the following Content Security Policy directive "script-src <…>"»:
+https://github.com/cabinetsbay/site/issues/62 -->
+				<value id='*.doubleclick.net' type='host'>*.doubleclick.net</value>
+<!-- 2024-01-01
 1) «Refused to load the script 'https://static.hotjar.com/c/hotjar-3661092.js?sv=7'
 because it violates the following Content Security Policy directive "script-src <…>"»:
 https://github.com/cabinetsbay/site/issues/65
