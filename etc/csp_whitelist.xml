@@ -34,6 +34,11 @@ because it violates the following Content Security Policy directive: "connect-sr
 https://github.com/cabinetsbay/site/issues/86 -->
 				<value id='content.hotjar.io' type='host'>content.hotjar.io</value>
 <!-- 2024-01-01
+«Refused to connect to 'wss://ws.hotjar.com/api/v2/client/ws?v=5'
+because it violates the following Content Security Policy directive: "connect-src <…>"»:
+https://github.com/cabinetsbay/site/issues/85 -->
+				<value id='wss://ws.hotjar.com' type='host'>wss://ws.hotjar.com</value>
+<!-- 2024-01-01
 «Refused to connect to 'https://ekr.zdassets.com/compose/<…>'
 because it violates the following Content Security Policy directive: "connect-src <…>"»:
 https://github.com/cabinetsbay/site/issues/73 -->
