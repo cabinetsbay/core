@@ -6,40 +6,40 @@
 >
 	<policies>
 <!-- 2024-01-01
-«Refused to load the script '<URL>' because it violates the following Content Security Policy directive: "connect-src <…>"»:
+«Refused to connect to '<URL>' because it violates the following Content Security Policy directive: "connect-src <…>"»:
 https://github.com/cabinetsbay/site/issues/55 -->
 		<policy id='connect-src'>
 			<values>
 <!-- 2024-01-01
-1) «Refused to load the script 'https://www.affirm.com/api/v2/cookie_sent'
+1) «Refused to connect to 'https://www.affirm.com/api/v2/cookie_sent'
 because it violates the following Content Security Policy directive: "connect-src <…>"»:
 https://github.com/cabinetsbay/site/issues/74
-2) «Refused to load the script 'https://tracker.affirm.com/collect'
+2) «Refused to connect to 'https://tracker.affirm.com/collect'
 because it violates the following Content Security Policy directive: "connect-src <…>"»:
 https://github.com/cabinetsbay/site/issues/79 -->
 				<value id='*.affirm.com' type='host'>*.affirm.com</value>
 <!-- 2024-01-01
-«Refused to load the script 'https://stats.g.doubleclick.net/j/collect?<…>'
+«Refused to connect to 'https://stats.g.doubleclick.net/j/collect?<…>'
 because it violates the following Content Security Policy directive: "connect-src <…>"»:
 https://github.com/cabinetsbay/site/issues/76 -->
 				<value id='*.doubleclick.net' type='host'>*.doubleclick.net</value>
 <!-- 2024-01-01
-«Refused to load the script 'https://www.googleadservices.com/pagead/conversion/670208216/wcm?<…>'
+«Refused to connect to 'https://www.googleadservices.com/pagead/conversion/670208216/wcm?<…>'
 because it violates the following Content Security Policy directive: "connect-src <…>"»:
 https://github.com/cabinetsbay/site/issues/75 -->
 				<value id='*.googleadservices.com' type='host'>*.googleadservices.com</value>
 <!-- 2024-01-01
-«Refused to load the script 'https://ekr.zdassets.com/compose/<…>'
+«Refused to connect to 'https://ekr.zdassets.com/compose/<…>'
 because it violates the following Content Security Policy directive: "connect-src <…>"»:
 https://github.com/cabinetsbay/site/issues/73 -->
 				<value id='*.zdassets.com' type='host'>*.zdassets.com</value>
 <!-- 2024-01-01
-«Refused to load the script 'https://cabinetsbay.zendesk.com/embeddable/config'
+«Refused to connect to 'https://cabinetsbay.zendesk.com/embeddable/config'
 because it violates the following Content Security Policy directive: "connect-src <…>"»:
 https://github.com/cabinetsbay/site/issues/77 -->
 				<value id='cabinetsbay.zendesk.com' type='host'>cabinetsbay.zendesk.com</value>
 <!-- 2024-01-01
-«Refused to load the script 'wss://widget-mediator.zopim.com/s/W/ws/<…>'
+«Refused to connect to 'wss://widget-mediator.zopim.com/s/W/ws/<…>'
 because it violates the following Content Security Policy directive: "connect-src <…>"»:
 https://github.com/cabinetsbay/site/issues/78 -->
 				<value id='wss://widget-mediator.zopim.com' type='host'>wss://widget-mediator.zopim.com</value>
