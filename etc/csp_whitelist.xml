@@ -58,7 +58,7 @@ https://github.com/cabinetsbay/site/issues/80 -->
 			</values>
 		</policy>
 <!-- 2024-01-01
-«Refused to load the script '<URL>' because it violates the following Content Security Policy directive: "frame-src <…>"»:
+«Refused to frame '<URL>' because it violates the following Content Security Policy directive: "frame-src <…>"»:
 https://github.com/cabinetsbay/site/issues/81 -->
 		<policy id='frame-src'>
 			<values>
