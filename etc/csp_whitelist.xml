@@ -11,9 +11,12 @@ https://github.com/cabinetsbay/site/issues/55-->
 		<policy id='connect-src'>
 			<values>
 <!-- 2024-01-01
-«Refused to load the script 'https://www.affirm.com/api/v2/cookie_sent'
+1) «Refused to load the script 'https://www.affirm.com/api/v2/cookie_sent'
 because it violates the following Content Security Policy directive: "connect-src <…>"»:
-https://github.com/cabinetsbay/site/issues/74 -->
+https://github.com/cabinetsbay/site/issues/74
+2) «Refused to load the script 'https://tracker.affirm.com/collect'
+because it violates the following Content Security Policy directive: "connect-src <…>"»:
+https://github.com/cabinetsbay/site/issues/79 -->
 				<value id='*.affirm.com' type='host'>*.affirm.com</value>
 <!-- 2024-01-01
 «Refused to load the script 'https://stats.g.doubleclick.net/j/collect?<…>'
