@@ -5,7 +5,7 @@
 use Magento\Catalog\Helper\Category as H;
 use Sharapov\Cabinetsbay\Block\Category\View as B;
 /** @var B $b */
-$h = $this->helper(H::class); /** @var H $h */
+$h = df_category_h(); /** @var H $h */
 $products = '';
 $filterStyle = $filterConstruction = ['all' => '<li data-style="all">All</li>'];
 $productsCollection = $b->getCategoryProducts();
