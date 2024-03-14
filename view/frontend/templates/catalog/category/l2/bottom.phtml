@@ -4,53 +4,18 @@
 # https://github.com/cabinetsbay/site/issues/112
 use Sharapov\Cabinetsbay\Block\Category\View as B;
 /** @var B $b */
-if ($b->isRTA()) {
-  print '<div id="faq-purchase" class="product-page-faq">';
-  print strip_tags($b->getLayout()->createBlock('Magento\Cms\Block\Block')
-					 ->setBlockId('product-page-faq-rta-welcome')->toHtml(), '<p><h3>');
-  print '</div>';
-  print '<div class="product-page-faq">';
-  print strip_tags($b->getLayout()->createBlock('Magento\Cms\Block\Block')
-					 ->setBlockId('product-page-faq-rta-body')->toHtml(), '<p><h4><strong>');
-  print '</div>';
-  print '<div id="how-to-shop" class="product-page-how-to-shop mobile-view">';
-  print strip_tags($b
-					 ->getLayout()
-					 ->createBlock('Magento\Cms\Block\Block')
-					 ->setBlockId('product-page-rta-how-to-shop')
-					 ->toHtml(), '<p><h3>');
-  print '<a href="#products_list" class="scrollTo">Click here to start shopping</a>';
-  print '</div>';
-  print '<div class="product-page-info mobile-view">';
-  print strip_tags($b
-					 ->getLayout()
-					 ->createBlock('Magento\Cms\Block\Block')
-					 ->setBlockId('product-page-rta-info')
-					 ->toHtml(), '<p><strong><a><table><tbody><tr><td><h3>');
-  print '</div>';
-}
-elseif ($b->isPA()) { // If pre-assembled products
-  print '<div id="faq-purchase" class="product-page-faq">';
-  print strip_tags($b->getLayout()->createBlock('Magento\Cms\Block\Block')
-					 ->setBlockId('product-page-faq-pa-welcome')->toHtml(), '<p><h3>');
-  print '</div>';
-  print '<div class="product-page-faq">';
-  print strip_tags($b->getLayout()->createBlock('Magento\Cms\Block\Block')
-					 ->setBlockId('product-page-faq-pa-body')->toHtml(), '<p><h4><strong>');
-  print '</div>';
-  print '<div id="how-to-shop" class="product-page-how-to-shop mobile-view">';
-  print strip_tags($b
-					 ->getLayout()
-					 ->createBlock('Magento\Cms\Block\Block')
-					 ->setBlockId('product-page-pa-how-to-shop')
-					 ->toHtml(), '<p><h3>');
-  print '<a href="#products_list" class="scrollTo">Click here to start shopping</a>';
-  print '</div>';
-  print '<div class="product-page-info mobile-view">';
-  print strip_tags($b
-					 ->getLayout()
-					 ->createBlock('Magento\Cms\Block\Block')
-					 ->setBlockId('product-page-pa-info')
-					 ->toHtml(), '<p><strong><a><table><tbody><tr><td><h3>');
-  print '</div>';
-}
+$id = $b->isRTA() ? 'rta' : 'pa'; /** @var string $id */
+?>
+<div class='product-page-faq' id='faq-purchase'>
+	<?= df_cms_block_content("product-page-faq-{$id}-welcome") ?>
+</div>
+<div class='product-page-faq'>
+	<?= df_cms_block_content("product-page-faq-{$id}-body") ?>
+</div>
+<div class='product-page-how-to-shop mobile-view' id='how-to-shop'>
+	<?= df_cms_block_content("product-page-{$id}-how-to-shop") ?>
+	<a href='#products_list' class='scrollTo'>Click here to start shopping</a>
+</div>
+<div class="product-page-info mobile-view">
+	<?= df_cms_block_content("product-page-{$id}-info") ?>
+</div>
