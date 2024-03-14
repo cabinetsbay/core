@@ -9,8 +9,8 @@ use Sharapov\Cabinetsbay\Block\Category\View as B;
 $h = df_category_h(); /** @var H $h */
 $products = '';
 $filterStyle = $filterConstruction = ['all' => '<li data-style="all">All</li>'];
-$cc = $b->children(); /** @var CC $cc */
-if (count($cc) > 0) {
+$cc = df_category_children($b->getCurrentCategory())->setOrder('position', 'ASC'); /** @var CC $cc */
+if (count($cc)) {
 	foreach ($cc as $productCategory) {
 	// Fill styles
 	$filterStyle[$productCategory->getData('cb_kitchen_style')] =
