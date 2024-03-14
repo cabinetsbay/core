@@ -12,7 +12,6 @@ $products = '';
 $filterStyle = $filterConstruction = ['all' => '<li data-style="all">All</li>'];
 $cc = df_category_children($b->getCurrentCategory())->setOrder('position', 'ASC'); /** @var CC $cc */
 foreach ($cc as $c) {/** @var C $c */
-	// Fill styles
 	$filterStyle[$c->getData('cb_kitchen_style')] =
 	  '<li data-style="'.$c->getData('cb_kitchen_style').'">'.$c->getData('cb_kitchen_style').'</li>';
 
