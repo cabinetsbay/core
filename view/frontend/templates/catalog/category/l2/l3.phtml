@@ -3,14 +3,15 @@
 # "Refactor `app/design/frontend/Cabinetsbay/cabinetsbay_default/Magento_Catalog/templates/category/view.phtml`":
 # https://github.com/cabinetsbay/site/issues/112
 use Magento\Catalog\Helper\Category as H;
+use Magento\Catalog\Model\ResourceModel\Category\Collection as CC;
 use Sharapov\Cabinetsbay\Block\Category\View as B;
 /** @var B $b */
 $h = df_category_h(); /** @var H $h */
 $products = '';
 $filterStyle = $filterConstruction = ['all' => '<li data-style="all">All</li>'];
-$productsCollection = $b->getCategoryProducts();
-if (count($productsCollection) > 0) {
-	foreach ($productsCollection as $productCategory) {
+$cc = $b->getCategoryProducts(); /** @var CC $cc */
+if (count($cc) > 0) {
+	foreach ($cc as $productCategory) {
 	// Fill styles
 	$filterStyle[$productCategory->getData('cb_kitchen_style')] =
 	  '<li data-style="'.$productCategory->getData('cb_kitchen_style').'">'.$productCategory->getData('cb_kitchen_style').'</li>';
