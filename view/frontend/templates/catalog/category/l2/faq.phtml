@@ -1,0 +1,16 @@
+<?php
+use Sharapov\Cabinetsbay\Block\Category\View as B;
+/** @var B $b */
+[$id, $title] = $b->isRTA() ? ['rta', 'RTA'] : ['pa', 'Pre-Assembled']; /** @var string $id */ /** @var string $title */
+?>
+<h2 class="product-page-title">
+	<span><?= $b->getCurrentCategory()->getName() ?></span>
+	<sub>Frequently Asked Questions about <?= $title ?> Cabinets
+		<a href="#faq-purchase" class="scrollTo">Learn More...</a>
+	</sub>
+</h2>
+<div class='product-page-info'><?= df_cms_block_content("product-page-{$id}-info") ?></div>
+<div class='product-page-how-to-shop'>
+	<?= df_cms_block_content("product-page-{$id}-how-to-shop") ?>
+	<a class='scrollTo' href='#how-to-shop'>Learn More...</a>
+</div>
