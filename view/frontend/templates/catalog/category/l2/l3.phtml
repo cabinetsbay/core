@@ -39,52 +39,13 @@ foreach ($cc as $c) {/** @var C $c */
 				  . '">Shop cabinets</a><a href="'.$c->getData('cb_door_sample_link').'">Order sample</a></div>';
 	$products.= '</li>';
 }
-?>
-<div class="category-filterblock short-first">
-	<div>
-		<label>Filter</label>
-	</div>
-	<div>
-		<div id="dropdown-price" class="category-filter-dropdown" data-mage-init='{"dropdown":{}}'>
-			<span class="action toggle" data-toggle="dropdown" aria-haspopup="true">
-				<span>Price</span>
-			</span>
-			<ul class="dropdown">
-				<li data-sortby="asc">Low-High</li>
-				<li data-sortby="desc">High-Low</li>
+echo df_block_output('CabinetsBay_Core', 'catalog/category/l2/l3/filters', ['cc' => $cc]);
+if (count($cc)) {
+	?>
+		<div class="c-products-grid">
+			<ul id="products_list">
+				<?= df_block_output('CabinetsBay_Core', 'catalog/category/l2/l3/items', ['cc' => $cc]) ?>
 			</ul>
 		</div>
-	</div>
-	<div>
-		<div id="dropdown-color" class="category-filter-dropdown" data-mage-init='{"dropdown":{}}'>
-			<span class="action toggle" data-toggle="dropdown" aria-haspopup="true">
-				<span>Color</span>
-			</span>
-			<ul class="dropdown">
-				<li data-sortby="lighter">Lighter</li>
-				<li data-sortby="darker">Darker</li>
-			</ul>
-		</div>
-	</div>
-	<div>
-		<div id="dropdown-style" class="category-filter-dropdown" data-mage-init='{"dropdown":{}}'>
-			<span class="action toggle" data-toggle="dropdown" aria-haspopup="true">
-				<span>Style (All)</span>
-			</span>
-			<ul class="dropdown">
-				<?= implode("", $filterStyle) ?>
-			</ul>
-		</div>
-	</div>
-	<div>
-		<div id="dropdown-construction" class="category-filter-dropdown" data-mage-init='{"dropdown":{}}'>
-			<span class="action toggle" data-toggle="dropdown" aria-haspopup="true">
-				<span>Cabinet Construction (All)</span>
-			</span>
-			<ul class="dropdown"><?= implode("", $filterConstruction); ?></ul>
-		</div>
-	</div>
-</div>
-<?php if (!empty($products)) {
-	?><div class="c-products-grid"><ul id="products_list"><?= $products ?></ul></div><?php
+	<?php
 }
