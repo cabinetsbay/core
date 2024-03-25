@@ -15,19 +15,7 @@ if (count($cc)) { ?>
 					data-sorterprice='<?= preg_replace('/[^0-9.]+/', '', $c['cb_kitchen_price']) ?>'
 					data-sorterstyle='<?= $c['cb_kitchen_style'] ?>'
 				>
-					<a href='<?= $c->getUrl() ?>'>
-						<div><?= $c->getName() ?></div>
-						<?php if ($set = $c['cb_kitchen_set']) { ?>
-							<div class='size-price'>
-								<b><?= $set ?></b><?=  $c['cb_kitchen_price'] ?>
-							</div>
-						<?php }	?>
-						<img border=0 src='<?= $c->getImageUrl() ?>'/>
-					</a>
-					<div>
-						<a href='<?= $c->getUrl() ?>'>Shop cabinets</a>
-						<a href='<?= $c['cb_door_sample_link'] ?>'>Order sample</a>
-					</div>
+					<?= df_block_output('CabinetsBay_Core', 'catalog/category/item', ['c' => $c]) ?>
 				</li>
 			<?php }	?>
 		</ul>
