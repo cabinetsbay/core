@@ -19,13 +19,8 @@ echo df_tag('ul', 'category-menu', df_map_k(function($k, $v):string {return df_t
 		# should be always visible": https://github.com/cabinetsbay/site/issues/120
 		'class' => 'scrollTo'
 		,'href' => "#$k"
-	], $v)
-);}, [
-	'overview' => 'Product Overview'
-	,'specifications' => 'Specifications'
-	,'cabinet-assembly' => 'Cabinet Assembly'
-	,'matching-styles' => 'Matching Styles'
-]));
+	], $v['title'])
+);}, $tabs));
 ?>
 <div id='overview' class='category-tab' data-role='content'>
 	<label>Product Overview <span class='submenu-toggle' data-role='trigger' tabindex='0'></span></label>
