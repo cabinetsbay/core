@@ -6,8 +6,7 @@ use Magento\Catalog\Model\Category as C;
 use Sharapov\Cabinetsbay\Block\Category\View as B;
 /** @var B $b */
 echo $b->l3a('cb_styles');
-$cc = $b->l3p();
-if (count($cc)) {
+if (count($cc = $b->l3p())) { /** @var C[] $cc */
   print '<div class="c-products-grid">';
   print '<ul>';
   foreach ($cc as $c) {/** @var C $c */
