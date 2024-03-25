@@ -111,7 +111,7 @@ df_assert($l3 = $b->l3()); /** @var C $l3 */
 			print '<li>';
 			print '<a href="' . $ch->getCategoryUrl($c) . '">';
 			print '<div>' . $c->getName() . '</div>';
-			if($c->getData('cb_kitchen_set') != '') {
+			if ($c->getData('cb_kitchen_set') != '') {
 			  print '<div class="size-price"><b>' . $c->getData('cb_kitchen_set') . '</b>' . $c->getData('cb_kitchen_price') . '</div>';
 			}
 			try {
