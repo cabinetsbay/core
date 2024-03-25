@@ -26,7 +26,7 @@ foreach ($tabs as $k => $v) {/** @var string $k */ /** @var array(string => stri
 		<label><?= $v['title'] ?>> <span class='submenu-toggle' data-role='trigger' tabindex='0'></span></label>
 		<div class='content'>
 			<?= 'block' === ($c = $v['content'])
-					? df_block_output('CabinetsBay_Core', "catalog/category/tabs/$c", ['b' => $b])
+					? df_block_output('CabinetsBay_Core', "catalog/category/tabs/$k", ['b' => $b])
 					: $b->l3a($c)
 			?>
 		</div>
