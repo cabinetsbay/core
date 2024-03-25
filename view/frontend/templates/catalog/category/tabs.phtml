@@ -31,14 +31,16 @@ df_assert($l3 = $b->l3()); /** @var C $l3 */
 			<div class='category-tab-left'>
 				<?php if ($ii = $b->images()) { ?>
 					<ul id='category-gallery' class='gallery list-unstyled cS-hidden'>
-						<?php foreach ($ii as $i => $title) {
-							echo df_tag('li', [
-								'data-src' => $u = df_media_path2url("wysiwyg/catalog-carousel-images/$i")
-								,'data-thumb' => $u
-							], df_tag('img', [
-								'alt' => $title,'src' => $u, 'title' => $title
-							]));
-						} ?>
+						<?=
+							df_cc_n(df_map_k($ii, function($i, string $title):string {return
+								df_tag('li', [
+									'data-src' => $u = df_media_path2url("wysiwyg/catalog-carousel-images/$i")
+									,'data-thumb' => $u
+								], df_tag('img', [
+									'alt' => $title,'src' => $u, 'title' => $title
+								]))
+							;}));
+						?>
 					</ul>
 					<script>
 						require(['jquery', 'domReady!'], function($) {
