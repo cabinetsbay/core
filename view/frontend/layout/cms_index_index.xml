@@ -4,9 +4,9 @@
 	xsi:noNamespaceSchemaLocation='urn:magento:framework:View/Layout/etc/page_configuration.xsd'
 >
 	<body>
-<!-- 2024-03-26 "Delete the `cookie-status` hidden block from the home page": https://github.com/cabinetsbay/site/issues/124 -->
+<!-- 2024-03-26 "Delete the `cookie-status` hidden block from the home page": https://github.com/cabinetsbay/core/issues/3 -->
 		<referenceBlock name='authentication-popup' remove='true'/>
-<!-- 2024-03-26 "Delete the `cookie-status` hidden block from the home page": https://github.com/cabinetsbay/site/issues/123 -->
+<!-- 2024-03-26 "Delete the `cookie-status` hidden block from the home page": https://github.com/cabinetsbay/core/issues/4 -->
 		<referenceBlock name='cookie-status-check' remove='true'/>
 	</body>
 </page>
