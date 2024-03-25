@@ -104,17 +104,17 @@ df_assert($l3 = $b->l3()); /** @var C $l3 */
 <div id="matching-styles" class="category-tab" data-role="content">
 	<label>Matching Styles <span class="submenu-toggle" data-role="trigger" tabindex="0"></span></label>
 	<div class="content">
-		<?php /** @var \Magento\Catalog\Helper\Category $categoryHelper_sub */
-		$categoryHelper_sub = $this->helper('Magento\Catalog\Helper\Category'); ?>
-		<?= $this->getMatchingStyles(); ?>
-		<?php $matchingProducts = $this->getMatchingProducts(); ?>
+		<?php /** @var \Magento\Catalog\Helper\Category $ch */
+		$ch = df_category_h(); ?>
+		<?= $b->getMatchingStyles(); ?>
+		<?php $matchingProducts = $b->getMatchingProducts(); ?>
 		<?php if(count($matchingProducts) > 0) :
 		  print '<div class="c-products-grid">';
 		  print '<ul>';
 		  foreach ($matchingProducts as $matchingProduct) {
 			/** @var \Magento\Catalog\Model\Category\Interceptor $matchingProduct */
 			print '<li>';
-			print '<a href="' . $categoryHelper_sub->getCategoryUrl($matchingProduct) . '">';
+			print '<a href="' . $ch->getCategoryUrl($matchingProduct) . '">';
 			print '<div>' . $matchingProduct->getName() . '</div>';
 			if($matchingProduct->getData('cb_kitchen_set') != '') {
 			  print '<div class="size-price"><b>' . $matchingProduct->getData('cb_kitchen_set') . '</b>' . $matchingProduct->getData('cb_kitchen_price') . '</div>';
@@ -125,7 +125,7 @@ df_assert($l3 = $b->l3()); /** @var C $l3 */
 
 			}
 			print '</a>';
-			print '<div><a href="' . $categoryHelper_sub->getCategoryUrl($matchingProduct)
+			print '<div><a href="' . $ch->getCategoryUrl($matchingProduct)
 			  . '">Shop cabinets</a><a href="'.$matchingProduct->getData('cb_door_sample_link').'">Order sample</a></div>';
 			print '</li>';
 		  }
