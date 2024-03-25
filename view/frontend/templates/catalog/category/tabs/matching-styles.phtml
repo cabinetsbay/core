@@ -13,9 +13,9 @@ if (count($cc = $b->l3p())) { /** @var C[] $cc */ ?>
 				<li>
 					<a href='<?= $c->getUrl() ?>'>
 						<div><?= $c->getName() ?></div>
-						<?php if ($ks = $c['cb_kitchen_set']) { ?>
+						<?php if ($set = $c['cb_kitchen_set']) { ?>
 							<div class='size-price'>
-								<b><?= $ks ?></b><?= $c['cb_kitchen_price'] ?>
+								<b><?= $set ?></b><?= $c['cb_kitchen_price'] ?>
 							</div>
 						<?php } ?>
 						<img border='0' src='<?= $c->getImageUrl() ?>'/>
