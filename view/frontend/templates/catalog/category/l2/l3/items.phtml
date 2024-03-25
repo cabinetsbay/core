@@ -7,7 +7,7 @@ use Magento\Catalog\Model\ResourceModel\Category\Collection as CC;
 /** @var CC $cc */
 if (count($cc)) { ?>
 	<div class='c-products-grid'>
-		<ul id="products_list">
+		<ul id='products_list'>
 			<?php foreach ($cc as $c) {/** @var C $c */ ?>
 				<li
 					data-sortercolor='<?= $c['cb_kitchen_color'] ?>'
