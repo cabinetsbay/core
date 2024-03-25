@@ -22,7 +22,11 @@ echo df_tag('ul', 'category-menu', df_map_k(function(string $k, array $v):string
 	], $v['title'])
 );}, $tabs));
 foreach ($tabs as $k => $v) {/** @var string $k */ /** @var array(string => string) $v */ ?>
-	<div id='<?= $k ?>' class='category-tab' data-role='content'>
+<!-- 2024-03-25
+1) "The contents of the tabs «Product Overview», «Specifications», «Cabinet Assembly», «Matching Styles»
+should be always visible": https://github.com/cabinetsbay/site/issues/120
+2) I added the `active` class. -->
+	<div id='<?= $k ?>' class='active category-tab' data-role='content'>
 		<label><?= $v['title'] ?>> <span class='submenu-toggle' data-role='trigger' tabindex='0'></span></label>
 		<div class='content'>
 			<?= 'block' === ($c = $v['content'])
