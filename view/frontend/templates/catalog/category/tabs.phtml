@@ -107,8 +107,7 @@ df_assert($l3 = $b->l3()); /** @var C $l3 */
 		<?php if(count($cc) > 0) :
 		  print '<div class="c-products-grid">';
 		  print '<ul>';
-		  foreach ($cc as $c) {
-			/** @var \Magento\Catalog\Model\Category\Interceptor $c */
+		  foreach ($cc as $c) {/** @var C $c */
 			print '<li>';
 			print '<a href="' . $ch->getCategoryUrl($c) . '">';
 			print '<div>' . $c->getName() . '</div>';
