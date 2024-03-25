@@ -4,9 +4,14 @@
 # https://github.com/cabinetsbay/site/issues/105
 use Magento\Catalog\Model\Category as C;
 use Sharapov\Cabinetsbay\Block\Category\View as B;
+$tabs = [
+	'overview' => ['content' => 'block', 'title' => 'Product Overview']
+	,'specifications' => ['content' => 'cb_specs', 'title' => 'Specifications']
+	,'cabinet-assembly' => ['content' => 'cb_assembly', 'title' => 'Cabinet Assembly']
+	,'matching-styles' => ['content' => 'block', 'title' => 'Matching Styles']
+]; /** @var string => array(string => string) $tabs */
 /** @var B $b */
-# 2024-03-25
-# These tabs are visible on wide screens only.
+# 2024-03-25 These tabs are visible on wide screens only.
 echo df_tag('ul', 'category-menu', df_map_k(function($k, $v):string {return df_tag('li', ['data-role' => 'title'],
 	df_tag('a', [
 		# 2024-03-25
