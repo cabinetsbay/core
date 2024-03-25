@@ -27,10 +27,10 @@ df_assert($l3 = $b->l3()); /** @var C $l3 */
 	<label>Product Overview <span class='submenu-toggle' data-role='trigger' tabindex='0'></span></label>
 	<div class='content'>
 		<?= $title # 2024-03-11 It is visible on wide screens only ?>
-		<div class="category-info">
-			<div class="category-tab-left">
+		<div class='category-info'>
+			<div class='category-tab-left'>
 				<?php if ($ii = $b->images()) { ?>
-					<ul id="category-gallery" class="gallery list-unstyled cS-hidden">
+					<ul id='category-gallery' class='gallery list-unstyled cS-hidden'>
 						<?php foreach ($ii as $i => $title) {
 							echo df_tag('li', [
 								'data-src' => $u = df_media_path2url("wysiwyg/catalog-carousel-images/$i")
