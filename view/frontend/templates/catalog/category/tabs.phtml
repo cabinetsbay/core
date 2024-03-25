@@ -112,13 +112,18 @@ df_assert($l3 = $b->l3()); /** @var C $l3 */
 			print '<a href="' . $ch->getCategoryUrl($c) . '">';
 			print '<div>' . $c->getName() . '</div>';
 			if ($c->getData('cb_kitchen_set') != '') {
-			  print '<div class="size-price"><b>' . $c->getData('cb_kitchen_set') . '</b>' . $c->getData('cb_kitchen_price') . '</div>';
+				print
+					'<div class="size-price"><b>'
+					. $c->getData('cb_kitchen_set')
+					. '</b>'
+					. $c->getData('cb_kitchen_price')
+					. '</div>'
+				;
 			}
 			try {
-			  print '<img src="' . $c->getImageUrl() . '" border="0" />';
-			} catch (\Magento\Framework\Exception\LocalizedException $e) {
-
+				print '<img src="' . $c->getImageUrl() . '" border="0" />';
 			}
+			catch (\Magento\Framework\Exception\LocalizedException $e) {}
 			print '</a>';
 			print '<div><a href="' . $ch->getCategoryUrl($c)
 			  . '">Shop cabinets</a><a href="'.$c->getData('cb_door_sample_link').'">Order sample</a></div>';
