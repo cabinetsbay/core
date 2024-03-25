@@ -2,8 +2,9 @@
 # 2024-03-25
 # "Refactor `app/design/frontend/Cabinetsbay/cabinetsbay_default/Magento_Catalog/templates/category/header.phtml`":
 # https://github.com/cabinetsbay/site/issues/105
+use Magento\Catalog\Model\Category as C;
 use Sharapov\Cabinetsbay\Block\Category\View as B;
-/** @var B $b */
+/** @var B $b */ /** @var string $title */
 # 2024-03-25
 # These tabs are visible on wide screens only.
 echo df_tag('ul', 'category-menu', df_map_k(function($k, $v):string {return df_tag('li', ['data-role' => 'title'],
@@ -20,3 +21,116 @@ echo df_tag('ul', 'category-menu', df_map_k(function($k, $v):string {return df_t
 	,'cabinet-assembly' => 'Cabinet Assembly'
 	,'matching-styles' => 'Matching Styles'
 ]));
+df_assert($l3 = $b->l3()); /** @var C $l3 */
+?>
+<div id="overview" class="category-tab" data-role="content">
+	<label>Product Overview <span class="submenu-toggle" data-role="trigger" tabindex="0"></span></label>
+	<div class="content">
+	<?php
+		# 2024-03-11 Dmitrii Fediuk https://upwork.com/fl/mage2pro
+		# It is visible on wide screens only.
+		echo $title;
+	?>
+	<div class="category-info">
+		<div class="category-tab-left">
+			<?php if ($ii = $b->images()) { ?>
+				<ul id="category-gallery" class="gallery list-unstyled cS-hidden">
+					<?php foreach ($ii as $i => $title) {
+						echo df_tag('li', [
+							'data-src' => $u = df_media_path2url("wysiwyg/catalog-carousel-images/$i")
+							,'data-thumb' => $u
+						], df_tag('img', [
+							'alt' => $title,'src' => $u, 'title' => $title
+						]));
+					} ?>
+				</ul>
+				<script>
+					require(['jquery', 'domReady!'], function($) {
+						let totalWidth = 0;
+						$('.owl-thumb-item').each(function() {
+							totalWidth += parseInt($(this).width(), 10);
+						});
+						$('.owl-thumbs').css('width', (totalWidth + 20)+'px');
+					});
+				</script>
+			<?php }
+			else {
+				try {
+					if ($url = $l3->getImageUrl()) {
+						echo df_catalog_output()->categoryAttribute(
+							$l3
+							,df_tag('div', 'category-image', df_tag('img', [
+								'alt' => $l3->getName()
+								,'class' => 'image'
+								,'src' => $url
+								,'title' => $l3->getName()
+							]))
+							,'image'
+						);
+					}
+				} catch (\Magento\Framework\Exception\LocalizedException $e) {}
+			}
+			?>
+		</div>
+		<div class="category-tab-right">
+			<?php if ($_description = $l3->getDescription()): ?>
+				<div class="category-description">
+					<?= df_catalog_output()->categoryAttribute($l3, $_description, 'description') ?>
+				</div>
+			<?php endif; ?>
+			<div class="category-subdescription">
+				<div class="table-view">
+					<a href="/sample-doors.html">Order Sample</a>
+					<a href="/kitchen-design-assistance.html">Free Design</a>
+				</div>
+				<a class="scrollTo" href="#layer-product-list">Shop Cabinets Below <i></i></a>
+			</div>
+		</div>
+	</div>
+	</div>
+</div>
+<div id="specifications" class="category-tab category-tab-specifications" data-role="content">
+	<label>Specifications <span class="submenu-toggle" data-role="trigger" tabindex="0"></span></label>
+	<div class="content">
+		<?= $this->getSpecifications(); ?>
+	</div>
+</div>
+<div id="cabinet-assembly" class="category-tab" data-role="content">
+	<label>Cabinet Assembly <span class="submenu-toggle" data-role="trigger" tabindex="0"></span></label>
+	<div class="content">
+		<?= $this->getCabinetAssembly(); ?>
+	</div>
+</div>
+<div id="matching-styles" class="category-tab" data-role="content">
+	<label>Matching Styles <span class="submenu-toggle" data-role="trigger" tabindex="0"></span></label>
+	<div class="content">
+		<?php /** @var \Magento\Catalog\Helper\Category $categoryHelper_sub */
+		$categoryHelper_sub = $this->helper('Magento\Catalog\Helper\Category'); ?>
+		<?= $this->getMatchingStyles(); ?>
+		<?php $matchingProducts = $this->getMatchingProducts(); ?>
+		<?php if(count($matchingProducts) > 0) :
+		  print '<div class="c-products-grid">';
+		  print '<ul>';
+		  foreach ($matchingProducts as $matchingProduct) {
+			/** @var \Magento\Catalog\Model\Category\Interceptor $matchingProduct */
+			print '<li>';
+			print '<a href="' . $categoryHelper_sub->getCategoryUrl($matchingProduct) . '">';
+			print '<div>' . $matchingProduct->getName() . '</div>';
+			if($matchingProduct->getData('cb_kitchen_set') != '') {
+			  print '<div class="size-price"><b>' . $matchingProduct->getData('cb_kitchen_set') . '</b>' . $matchingProduct->getData('cb_kitchen_price') . '</div>';
+			}
+			try {
+			  print '<img src="' . $matchingProduct->getImageUrl() . '" border="0" />';
+			} catch (\Magento\Framework\Exception\LocalizedException $e) {
+
+			}
+			print '</a>';
+			print '<div><a href="' . $categoryHelper_sub->getCategoryUrl($matchingProduct)
+			  . '">Shop cabinets</a><a href="'.$matchingProduct->getData('cb_door_sample_link').'">Order sample</a></div>';
+			print '</li>';
+		  }
+		  print '</ul>';
+		  print '</div>';
+		endif; ?>
+	</div>
+</div>
