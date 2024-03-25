@@ -2,7 +2,6 @@
 # 2024-03-25
 # "Refactor `app/design/frontend/Cabinetsbay/cabinetsbay_default/Magento_Catalog/templates/category/header.phtml`":
 # https://github.com/cabinetsbay/site/issues/105
-use Magento\Catalog\Model\Category as C;
 use Sharapov\Cabinetsbay\Block\Category\View as B;
 $tabs = [
 	'overview' => ['content' => 'block', 'title' => 'Product Overview']
@@ -12,8 +11,9 @@ $tabs = [
 ]; /** @var string => array(string => string) $tabs */
 /** @var B $b */
 # 2024-03-25 These tabs are visible on wide screens only.
-echo df_tag('ul', 'category-menu', df_map_k(function($k, $v):string {return df_tag('li', ['data-role' => 'title'],
-	df_tag('a', [
+echo df_tag('ul', 'category-menu', df_map_k(function(string $k, array $v):string {return df_tag('li',
+	['data-role' => 'title']
+	, df_tag('a', [
 		# 2024-03-25
 		# "The contents of the tabs «Product Overview», «Specifications», «Cabinet Assembly», «Matching Styles»
 		# should be always visible": https://github.com/cabinetsbay/site/issues/120
@@ -21,28 +21,14 @@ echo df_tag('ul', 'category-menu', df_map_k(function($k, $v):string {return df_t
 		,'href' => "#$k"
 	], $v['title'])
 );}, $tabs));
-?>
-<div id='overview' class='category-tab' data-role='content'>
-	<label>Product Overview <span class='submenu-toggle' data-role='trigger' tabindex='0'></span></label>
-	<div class='content'>
-		<?= df_block_output('CabinetsBay_Core', 'catalog/category/tabs/overview', ['b' => $b]) ?>
+foreach ($tabs as $k => $v) {/** @var string $k */ /** @var array(string => string) $v */ ?>
+	<div id='<?= $k ?>' class='category-tab' data-role='content'>
+		<label><?= $v['title'] ?>> <span class='submenu-toggle' data-role='trigger' tabindex='0'></span></label>
+		<div class='content'>
+			<?= 'block' === ($c = $v['content'])
+					? df_block_output('CabinetsBay_Core', "catalog/category/tabs/$c", ['b' => $b])
+					: $b->l3a($c)
+			?>
+		</div>
 	</div>
-</div>
-<div id="specifications" class="category-tab category-tab-specifications" data-role="content">
-	<label>Specifications <span class="submenu-toggle" data-role="trigger" tabindex="0"></span></label>
-	<div class="content">
-		<?= $b->l3a('cb_specs') ?>
-	</div>
-</div>
-<div id="cabinet-assembly" class="category-tab" data-role="content">
-	<label>Cabinet Assembly <span class="submenu-toggle" data-role="trigger" tabindex="0"></span></label>
-	<div class="content">
-		<?= $b->l3a('cb_assembly') ?>
-	</div>
-</div>
-<div id="matching-styles" class="category-tab" data-role="content">
-	<label>Matching Styles <span class="submenu-toggle" data-role="trigger" tabindex="0"></span></label>
-	<div class="content">
-		<?= df_block_output('CabinetsBay_Core', 'catalog/category/tabs/matching-styles', ['b' => $b]) ?>
-	</div>
-</div>
+<?php } ?>
