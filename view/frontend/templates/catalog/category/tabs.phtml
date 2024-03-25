@@ -32,13 +32,11 @@ df_assert($l3 = $b->l3()); /** @var C $l3 */
 				<?php if ($ii = $b->images()) { ?>
 					<ul id='category-gallery' class='gallery list-unstyled cS-hidden'>
 						<?=
-							df_cc_n(df_map_k($ii, function($i, string $title):string {return
+							df_cc_n(df_map_k($ii, function(string $f, string $t):string {return
 								df_tag('li', [
-									'data-src' => $u = df_media_path2url("wysiwyg/catalog-carousel-images/$i")
+									'data-src' => $u = df_media_path2url("wysiwyg/catalog-carousel-images/$f")
 									,'data-thumb' => $u
-								], df_tag('img', [
-									'alt' => $title,'src' => $u, 'title' => $title
-								]))
+								], df_tag('img', ['alt' => $t,'src' => $u, 'title' => $t]))
 							;}))
 						?>
 					</ul>
