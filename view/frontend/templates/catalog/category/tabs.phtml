@@ -4,3 +4,19 @@
 # https://github.com/cabinetsbay/site/issues/105
 use Sharapov\Cabinetsbay\Block\Category\View as B;
 /** @var B $b */
+# 2024-03-25
+# These tabs are visible on wide screens only.
+echo df_tag('ul', 'category-menu', df_map_k(function($k, $v):string {return df_tag('li', ['data-role' => 'title'],
+	df_tag('a', [
+		# 2024-03-25
+		# "The contents of the tabs «Product Overview», «Specifications», «Cabinet Assembly», «Matching Styles»
+		# should be always visible": https://github.com/cabinetsbay/site/issues/120
+		'class' => 'scrollTo'
+		,'href' => "#$k"
+	], $v)
+);}, [
+	'overview' => 'Product Overview'
+	,'specifications' => 'Specifications'
+	,'cabinet-assembly' => 'Cabinet Assembly'
+	,'matching-styles' => 'Matching Styles'
+]));
