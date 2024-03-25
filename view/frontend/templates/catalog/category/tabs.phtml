@@ -26,11 +26,7 @@ df_assert($l3 = $b->l3()); /** @var C $l3 */
 <div id="overview" class="category-tab" data-role="content">
 	<label>Product Overview <span class="submenu-toggle" data-role="trigger" tabindex="0"></span></label>
 	<div class="content">
-	<?php
-		# 2024-03-11 Dmitrii Fediuk https://upwork.com/fl/mage2pro
-		# It is visible on wide screens only.
-		echo $title;
-	?>
+	<?= $title # 2024-03-11 It is visible on wide screens only ?>
 	<div class="category-info">
 		<div class="category-tab-left">
 			<?php if ($ii = $b->images()) { ?>
