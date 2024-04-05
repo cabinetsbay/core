@@ -5,52 +5,6 @@ window.dataLayer = window.dataLayer || [];
 <!-- Start of Zendesk Widget script -->
 <script id="ze-snippet" src="https://static.zdassets.com/ekr/snippet.js?key=d788c408-e1a5-470a-8863-5e48621b2fba"> </script>
 <!-- End of Zendesk Widget script -->
-<script>
-// 2024-04-05 https://docs.affirm.com/payments/docs/afjs-reference
-_affirm_config = {
-	public_api_key: "AB386TRIY90ATCSD",
-	script: "https://cdn1.affirm.com/js/v2/affirm.js"
-};
-(function(l,g,m,e,a,f,b) {
-	var d;
-	var c=l[m] || {};
-	var h = document.createElement(f);
-	var n = document.getElementsByTagName(f)[0];
-	var k = function(a,b,c) {return function(){a[b]._.push([c,arguments])}};
-	c[e] = k(c,e,"set");
-	d = c[e];
-	c[a] = {};
-	c[a]._ = [];
-	d._ = [];
-	c[a][b] = k(c,a,b);
-	a = 0;
-	for (
-		b="set add save post open empty reset on off trigger ready setProduct".split(" ");
-		a < b.length;
-		a++
-	) {
-		d[b[a]] = k(c,e,b[a]);
-	}
-	a=0;
-	for (
-		b=["get", "token", "url", "items"];
-		a < b.length;
-		a++
-	) {
-		d[b[a]] = function(){};
-	}
-	h.async = !0;
-	h.src = g[f];
-	n.parentNode.insertBefore(h, n);
-	delete g[f];
-	d(g);
-	l[m] = c;
-})(window, _affirm_config, "affirm", "checkout", "ui", "script", "ready");
-affirm.ui.ready(function() {
-	var a = {"page_type":"home","mode":"modal"};
-	affirm.prequal.set(a);
-});
-</script>
 <!-- Facebook Pixel Code -->
 <script>
 !function(f,b,e,v,n,t,s)
@@ -102,4 +56,57 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   gtag('js', new Date());
 
   gtag('config', 'G-8NXSJEWV17');
+</script>
+<script>
+	// 2024-04-05 https://docs.affirm.com/payments/docs/afjs-reference
+	_affirm_config = {
+		public_api_key: "AB386TRIY90ATCSD",
+		script: "https://cdn1.affirm.com/js/v2/affirm.js"
+	};
+	// 2024-04-05
+	// "«Mismatched anonymous define() module» on loading `cdn1.affirm.com/products/affirmjs/master/dist/ldclient.min.js`"
+	// https://github.com/cabinetsbay/site/issues/128
+	require(['domReady!'], () => {
+		setTimeout(() => {
+			(function(l,g,m,e,a,f,b) {
+				var d;
+				var c=l[m] || {};
+				var h = document.createElement(f);
+				var n = document.getElementsByTagName(f)[0];
+				var k = function(a,b,c) {return function(){a[b]._.push([c,arguments])}};
+				c[e] = k(c,e,"set");
+				d = c[e];
+				c[a] = {};
+				c[a]._ = [];
+				d._ = [];
+				c[a][b] = k(c,a,b);
+				a = 0;
+				for (
+					b="set add save post open empty reset on off trigger ready setProduct".split(" ");
+					a < b.length;
+					a++
+				) {
+					d[b[a]] = k(c,e,b[a]);
+				}
+				a=0;
+				for (
+					b=["get", "token", "url", "items"];
+					a < b.length;
+					a++
+				) {
+					d[b[a]] = function(){};
+				}
+				h.async = !0;
+				h.src = g[f];
+				n.parentNode.insertBefore(h, n);
+				delete g[f];
+				d(g);
+				l[m] = c;
+			})(window, _affirm_config, "affirm", "checkout", "ui", "script", "ready");
+			affirm.ui.ready(() => {
+				var a = {"page_type":"home", "mode":"modal"};
+				affirm.prequal.set(a);
+			});
+		}, 1000);
+	});
 </script>
