@@ -69,7 +69,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 	require(['domReady!'], () => {
 		debugger;
 		setTimeout(() => {
-			(function(window, g, m, e, a, f, b) {
+			(function(window, cfg, m, e, a, f, b) {
 				var d;
 				var c=window[m] || {};
 				var h = document.createElement(f);
@@ -98,10 +98,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 					d[b[a]] = function(){};
 				}
 				h.async = !0;
-				h.src = g[f];
+				h.src = cfg[f];
 				n.parentNode.insertBefore(h, n);
-				delete g[f];
-				d(g);
+				delete cfg[f];
+				d(cfg);
 				window[m] = c;
 			})(window, _affirm_config, "affirm", "checkout", "ui", "script", "ready");
 			affirm.ui.ready(() => {
