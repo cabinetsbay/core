@@ -63,51 +63,41 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 	// 2024-04-05
 	// '«Mismatched anonymous define() module» on loading `cdn1.affirm.com/products/affirmjs/master/dist/ldclient.min.js`'
 	// https://github.com/cabinetsbay/site/issues/128
-	require(['domReady!'], () => {
-		debugger;
-		setTimeout(() => {
-			(() => {
-				var d;
-				var affirm = window['affirm'] || {};
-				var k = function(a, b, c) {
-					return function() {
-						a[b]._.push([c, arguments]);
-					}
-				};
-				affirm['checkout'] = k(affirm, 'checkout', 'set');
-				d = affirm['checkout'];
-				affirm['ui'] = {};
-				affirm['ui']._ = [];
-				d._ = [];
-				affirm['ui']['ready'] = k(affirm, 'ui', 'ready');
-				var a = 0;
-				for (
-					var b = 'set add save post open empty reset on off trigger ready setProduct'.split(' ');
-					a < b.length;
-					a++
-				) {
-					d[b[a]] = k(affirm, 'checkout', b[a]);
-				}
-				a = 0;
-				for (
-					b = ['get', 'token', 'url', 'items'];
-					a < b.length;
-					a++
-				) {
-					d[b[a]] = function() {};
-				}
-				var script = document.createElement('script');
-				script.async = !0;
-				script.src = 'https://cdn1.affirm.com/js/v2/affirm.js';
-				var theFirstScript = document.getElementsByTagName('script')[0];
-				theFirstScript.parentNode.insertBefore(script, theFirstScript);
-				d(_affirm_config);
-				window['affirm'] = affirm;
-			})();
-			affirm.ui.ready(() => {
-				var a = {'page_type': 'home', 'mode': 'modal'};
-				affirm.prequal.set(a);
-			});
-		}, 1000);
+	var d;
+	var affirm = window['affirm'] || {};
+	var k = function(a, b, c) {
+		return function() {
+			a[b]._.push([c, arguments]);
+		}
+	};
+	affirm['checkout'] = k(affirm, 'checkout', 'set');
+	d = affirm['checkout'];
+	affirm['ui'] = {};
+	affirm['ui']._ = [];
+	d._ = [];
+	affirm['ui']['ready'] = k(affirm, 'ui', 'ready');
+	var a = 0;
+	for (
+		var b = 'set add save post open empty reset on off trigger ready setProduct'.split(' ');
+		a < b.length;
+		a++
+	) {
+		d[b[a]] = k(affirm, 'checkout', b[a]);
+	}
+	a = 0;
+	for (
+		b = ['get', 'token', 'url', 'items'];
+		a < b.length;
+		a++
+	) {
+		d[b[a]] = function() {};
+	}
+	require(['domReady!', 'https://cdn1.affirm.com/js/v2/affirm.js'], () => {
+		window['affirm']['checkout'](_affirm_config);
+		window['affirm'] = affirm;
+		affirm.ui.ready(() => {
+			var a = {'page_type': 'home', 'mode': 'modal'};
+			affirm.prequal.set(a);
+		});
 	});
 </script>
