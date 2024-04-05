@@ -69,7 +69,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 	require(['domReady!'], () => {
 		debugger;
 		setTimeout(() => {
-			(function(window, cfg, sAffirm, sCheckout, sUI, sScript, b) {
+			(function(window, cfg, sAffirm, sCheckout, sUI, sScript, sReady) {
 				var d;
 				var c = window[sAffirm] || {};
 				var h = document.createElement(sScript);
@@ -80,10 +80,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 				c[sUI] = {};
 				c[sUI]._ = [];
 				d._ = [];
-				c[a][b] = k(c, sUI, b);
+				c[sUI][sReady] = k(c, sUI, sReady);
 				a = 0;
 				for (
-					b="set add save post open empty reset on off trigger ready setProduct".split(" ");
+					b = "set add save post open empty reset on off trigger ready setProduct".split(" ");
 					a < b.length;
 					a++
 				) {
@@ -91,7 +91,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 				}
 				a = 0;
 				for (
-					b=["get", "token", "url", "items"];
+					b = ["get", "token", "url", "items"];
 					a < b.length;
 					a++
 				) {
