@@ -69,11 +69,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 	require(['domReady!'], () => {
 		debugger;
 		setTimeout(() => {
-			(function(window, cfg, sAffirm, sCheckout, sUI, sScript, sReady) {
+			(function(window, cfg, sAffirm, sCheckout, sUI, sReady) {
 				var d;
 				var c = window[sAffirm] || {};
-				var h = document.createElement(sScript);
-				var n = document.getElementsByTagName(sScript)[0];
+				var h = document.createElement('script');
+				var n = document.getElementsByTagName('script')[0];
 				var k = function(a, b, c) {return function(){a[b]._.push([c, arguments])}};
 				c[sCheckout] = k(c, sCheckout, "set");
 				d = c[sCheckout];
@@ -98,12 +98,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 					d[b[a]] = function(){};
 				}
 				h.async = !0;
-				h.src = cfg[sScript];
+				h.src = cfg['script'];
 				n.parentNode.insertBefore(h, n);
 				delete cfg[f];
 				d(cfg);
 				window[sAffirm] = c;
-			})(window, _affirm_config, "affirm", "checkout", "ui", "script", "ready");
+			})(window, _affirm_config, "affirm", "checkout", "ui", "ready");
 			affirm.ui.ready(() => {
 				var a = {"page_type":"home", "mode":"modal"};
 				affirm.prequal.set(a);
