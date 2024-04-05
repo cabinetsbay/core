@@ -59,10 +59,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </script>
 <script>
 	// 2024-04-05 https://docs.affirm.com/payments/docs/afjs-reference
-	_affirm_config = {
-		public_api_key: "AB386TRIY90ATCSD",
-		script: "https://cdn1.affirm.com/js/v2/affirm.js"
-	};
+	_affirm_config = {public_api_key: 'AB386TRIY90ATCSD'};
 	// 2024-04-05
 	// "«Mismatched anonymous define() module» on loading `cdn1.affirm.com/products/affirmjs/master/dist/ldclient.min.js`"
 	// https://github.com/cabinetsbay/site/issues/128
@@ -98,9 +95,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 				}
 				var script = document.createElement('script');
 				script.async = !0;
-				script.src = _affirm_config['script'];
+				script.src = 'https://cdn1.affirm.com/js/v2/affirm.js';
 				n.parentNode.insertBefore(script, n);
-				delete _affirm_config['script'];
 				d(_affirm_config);
 				window['affirm'] = affirm;
 			})();
