@@ -69,7 +69,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 	require(['domReady!'], () => {
 		debugger;
 		setTimeout(() => {
-			(function(cfg, sUI, sReady) {
+			(function(cfg, sReady) {
 				var d;
 				var affirm = window['affirm'] || {};
 				var h = document.createElement('script');
@@ -77,10 +77,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 				var k = function(a, b, c) {return function(){a[b]._.push([c, arguments])}};
 				affirm['checkout'] = k(affirm, 'checkout', "set");
 				d = affirm['checkout'];
-				affirm[sUI] = {};
-				affirm[sUI]._ = [];
+				affirm['ui'] = {};
+				affirm['ui']._ = [];
 				d._ = [];
-				affirm[sUI][sReady] = k(affirm, sUI, sReady);
+				affirm['ui'][sReady] = k(affirm, 'ui', sReady);
 				a = 0;
 				for (
 					b = "set add save post open empty reset on off trigger ready setProduct".split(" ");
@@ -103,7 +103,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 				delete cfg[f];
 				d(cfg);
 				window['affirm'] = affirm;
-			})(_affirm_config, "ui", "ready");
+			})(_affirm_config, "ready");
 			affirm.ui.ready(() => {
 				var a = {"page_type":"home", "mode":"modal"};
 				affirm.prequal.set(a);
