@@ -30,7 +30,15 @@ _affirm_config = {
 	) {
 		d[b[a]]=k(c,e,b[a]);
 	}
-	a=0;for(b=["get","token","url","items"];a<b.length;a++)d[b[a]]=function(){};h.async=!0;h.src=g[f];n.parentNode.insertBefore(h,n);delete g[f];d(g);l[m]=c})(window,_affirm_config,"affirm","checkout","ui","script","ready");
+	a=0;
+	for (
+		b=["get","token","url","items"];
+		a<b.length;
+		a++
+	) {
+		d[b[a]]=function(){};
+	}
+	h.async=!0;h.src=g[f];n.parentNode.insertBefore(h,n);delete g[f];d(g);l[m]=c})(window,_affirm_config,"affirm","checkout","ui","script","ready");
 affirm.ui.ready(function(){
 var a = {"page_type":"home","mode":"modal"};
 affirm.prequal.set(a);
