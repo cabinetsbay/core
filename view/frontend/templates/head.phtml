@@ -69,9 +69,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 	require(['domReady!'], () => {
 		debugger;
 		setTimeout(() => {
-			(function(l, g, m, e, a, f, b) {
+			(function(window, g, m, e, a, f, b) {
 				var d;
-				var c=l[m] || {};
+				var c=window[m] || {};
 				var h = document.createElement(f);
 				var n = document.getElementsByTagName(f)[0];
 				var k = function(a,b,c) {return function(){a[b]._.push([c,arguments])}};
@@ -102,7 +102,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 				n.parentNode.insertBefore(h, n);
 				delete g[f];
 				d(g);
-				l[m] = c;
+				window[m] = c;
 			})(window, _affirm_config, "affirm", "checkout", "ui", "script", "ready");
 			affirm.ui.ready(() => {
 				var a = {"page_type":"home", "mode":"modal"};
