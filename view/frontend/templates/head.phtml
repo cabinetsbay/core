@@ -69,14 +69,14 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 	require(['domReady!'], () => {
 		debugger;
 		setTimeout(() => {
-			(function(window, cfg, sAffirm, e, a, f, b) {
+			(function(window, cfg, sAffirm, sCheckout, a, f, b) {
 				var d;
 				var c = window[sAffirm] || {};
 				var h = document.createElement(f);
 				var n = document.getElementsByTagName(f)[0];
 				var k = function(a,b,c) {return function(){a[b]._.push([c,arguments])}};
-				c[e] = k(c,e,"set");
-				d = c[e];
+				c[sCheckout] = k(c, sCheckout, "set");
+				d = c[sCheckout];
 				c[a] = {};
 				c[a]._ = [];
 				d._ = [];
@@ -87,7 +87,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 					a < b.length;
 					a++
 				) {
-					d[b[a]] = k(c,e,b[a]);
+					d[b[a]] = k(c, sCheckout, b[a]);
 				}
 				a=0;
 				for (
