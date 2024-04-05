@@ -1,9 +1,9 @@
-<!-- 2024-01-01 "Refactor `design/head/includes` scripts to a Magento module": https://github.com/cabinetsbay/core/issues/1 -->
+<!-- 2024-01-01 'Refactor `design/head/includes` scripts to a Magento module': https://github.com/cabinetsbay/core/issues/1 -->
 <script>
 window.dataLayer = window.dataLayer || [];
 </script>
 <!-- Start of Zendesk Widget script -->
-<script id="ze-snippet" src="https://static.zdassets.com/ekr/snippet.js?key=d788c408-e1a5-470a-8863-5e48621b2fba"> </script>
+<script id='ze-snippet' src='https://static.zdassets.com/ekr/snippet.js?key=d788c408-e1a5-470a-8863-5e48621b2fba'> </script>
 <!-- End of Zendesk Widget script -->
 <!-- Facebook Pixel Code -->
 <script>
@@ -19,9 +19,9 @@ s.parentNode.insertBefore(t,s)}(window,document,'script',
 fbq('track', 'PageView');
 </script>
 <noscript>
- <img height="1" width="1"
-src="https://www.facebook.com/tr?id=203719850981922&ev=PageView
-&noscript=1"/>
+ <img height='1' width='1'
+src='https://www.facebook.com/tr?id=203719850981922&ev=PageView
+&noscript=1'/>
 </noscript>
 <!-- End Facebook Pixel Code -->
 <style>
@@ -38,8 +38,8 @@ src="https://www.facebook.com/tr?id=203719850981922&ev=PageView
 text-decoration: line-through;
 }
 </style>
-<meta name="google-site-verification" content="2MU7dvnQiQdpm1burH8qfTUyBMJeO0pRgLbmrH9EWHE" />
-<!-- 2024-01-01 "«jQuery is not defined» on my workstation": https://github.com/cabinetsbay/site/issues/53 -->
+<meta name='google-site-verification' content='2MU7dvnQiQdpm1burH8qfTUyBMJeO0pRgLbmrH9EWHE' />
+<!-- 2024-01-01 '«jQuery is not defined» on my workstation': https://github.com/cabinetsbay/site/issues/53 -->
 <?= df_js('CabinetsBay_Core'); ?>
 <!-- Google Tag Manager -->
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -49,7 +49,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 })(window,document,'script','dataLayer','GTM-MDDHKRG');</script>
 <!-- End Google Tag Manager -->
 <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-8NXSJEWV17"></script>
+<script async src='https://www.googletagmanager.com/gtag/js?id=G-8NXSJEWV17'></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
@@ -61,7 +61,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 	// 2024-04-05 https://docs.affirm.com/payments/docs/afjs-reference
 	_affirm_config = {public_api_key: 'AB386TRIY90ATCSD'};
 	// 2024-04-05
-	// "«Mismatched anonymous define() module» on loading `cdn1.affirm.com/products/affirmjs/master/dist/ldclient.min.js`"
+	// '«Mismatched anonymous define() module» on loading `cdn1.affirm.com/products/affirmjs/master/dist/ldclient.min.js`'
 	// https://github.com/cabinetsbay/site/issues/128
 	require(['domReady!'], () => {
 		debugger;
@@ -69,16 +69,20 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 			(() => {
 				var d;
 				var affirm = window['affirm'] || {};
-				var k = function(a, b, c) {return function(){a[b]._.push([c, arguments])}};
+				var k = function(a, b, c) {
+					return function() {
+						a[b]._.push([c, arguments]);
+					}
+				};
 				affirm['checkout'] = k(affirm, 'checkout', 'set');
 				d = affirm['checkout'];
 				affirm['ui'] = {};
 				affirm['ui']._ = [];
 				d._ = [];
 				affirm['ui']['ready'] = k(affirm, 'ui', 'ready');
-				a = 0;
+				var a = 0;
 				for (
-					b = "set add save post open empty reset on off trigger ready setProduct".split(" ");
+					var b = 'set add save post open empty reset on off trigger ready setProduct'.split(' ');
 					a < b.length;
 					a++
 				) {
@@ -86,7 +90,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 				}
 				a = 0;
 				for (
-					b = ["get", "token", "url", "items"];
+					b = ['get', 'token', 'url', 'items'];
 					a < b.length;
 					a++
 				) {
@@ -101,7 +105,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 				window['affirm'] = affirm;
 			})();
 			affirm.ui.ready(() => {
-				var a = {"page_type":"home", "mode":"modal"};
+				var a = {'page_type':'home', 'mode':'modal'};
 				affirm.prequal.set(a);
 			});
 		}, 1000);
