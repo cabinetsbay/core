@@ -69,18 +69,18 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 	require(['domReady!'], () => {
 		debugger;
 		setTimeout(() => {
-			(function(window, cfg, sAffirm, sCheckout, a, f, b) {
+			(function(window, cfg, sAffirm, sCheckout, sUI, f, b) {
 				var d;
 				var c = window[sAffirm] || {};
 				var h = document.createElement(f);
 				var n = document.getElementsByTagName(f)[0];
-				var k = function(a,b,c) {return function(){a[b]._.push([c,arguments])}};
+				var k = function(a, b, c) {return function(){a[b]._.push([c, arguments])}};
 				c[sCheckout] = k(c, sCheckout, "set");
 				d = c[sCheckout];
-				c[a] = {};
-				c[a]._ = [];
+				c[sUI] = {};
+				c[sUI]._ = [];
 				d._ = [];
-				c[a][b] = k(c,a,b);
+				c[a][b] = k(c, sUI, b);
 				a = 0;
 				for (
 					b="set add save post open empty reset on off trigger ready setProduct".split(" ");
@@ -89,7 +89,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 				) {
 					d[b[a]] = k(c, sCheckout, b[a]);
 				}
-				a=0;
+				a = 0;
 				for (
 					b=["get", "token", "url", "items"];
 					a < b.length;
