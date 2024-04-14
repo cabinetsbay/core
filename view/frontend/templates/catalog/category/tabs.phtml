@@ -20,7 +20,9 @@ echo df_tag('ul', 'category-menu', df_map_k(function(string $k, array $v):string
 		'class' => 'scrollTo'
 		,'href' => "#$k"
 	], $v['title'])
-);}, $tabs));
+# 2024-04-14 Dmitrii Fediuk https://upwork.com/fl/mage2pro
+# "Delete the useless «Product Overview» tab from frontend category pages": https://github.com/cabinetsbay/site/issues/132
+);}, df_tail($tabs)));
 foreach ($tabs as $k => $v) {/** @var string $k */ /** @var array(string => string) $v */ ?>
 <!-- 2024-03-25
 1) "The contents of the tabs «Product Overview», «Specifications», «Cabinet Assembly», «Matching Styles»
