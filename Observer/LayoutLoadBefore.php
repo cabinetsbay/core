@@ -8,6 +8,12 @@ final class LayoutLoadBefore implements ObserverInterface {
 	 * 2024-04-15
 	 * @override
 	 * @see ObserverInterface::execute()
+	 * @see \Magento\Framework\View\Layout\Builder::loadLayoutUpdates():
+	 * 		$this->eventManager->dispatch(
+	 * 			'layout_load_before',
+	 * 			['full_action_name' => $this->request->getFullActionName(), 'layout' => $this->layout]
+	 * 		);
+	 * https://github.com/magento/magento2/blob/2.4.4/lib/internal/Magento/Framework/View/Layout/Builder.php#L79-L82
 	 * @used-by \Magento\Framework\Event\Invoker\InvokerDefault::_callObserverMethod()
 	 */
 	function execute(O $o):void {}
