@@ -16,5 +16,9 @@ final class LayoutLoadBefore implements ObserverInterface {
 	 * https://github.com/magento/magento2/blob/2.4.4/lib/internal/Magento/Framework/View/Layout/Builder.php#L79-L82
 	 * @used-by \Magento\Framework\Event\Invoker\InvokerDefault::_callObserverMethod()
 	 */
-	function execute(O $o):void {}
+	function execute(O $o):void {
+		if (df_is_catalog_product_list()) {
+			df_page_config()->addBodyClass('cb-category-level-' . df_category_level());
+		}
+	}
 }
