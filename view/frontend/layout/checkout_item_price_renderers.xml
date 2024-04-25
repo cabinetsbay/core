@@ -4,7 +4,7 @@
 	xsi:noNamespaceSchemaLocation='urn:magento:framework:View/Layout/etc/page_configuration.xsd'
 >
 	<body>
-<!-- 2024-04-26 Dmitrii Fediuk https://upwork.com/fl/mage2pro
+<!-- 2024-04-26
 "The `checkout/cart` page should show prices before and after discounts (similar to the mini cart)":
 https://github.com/cabinetsbay/site/issues/143 -->
 		<referenceBlock name="checkout.item.price.row">
