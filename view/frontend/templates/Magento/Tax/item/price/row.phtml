@@ -2,12 +2,17 @@
 # 2024-04-26
 # "The `checkout/cart` page should show prices before and after discounts (similar to the mini cart)":
 # https://github.com/cabinetsbay/site/issues/143
-use Magento\Tax\Block\Item\Price\Renderer as B;
+use Magento\Catalog\Model\Product as P;
 use Magento\Quote\Model\Quote\Item as I;
+use Magento\Tax\Block\Item\Price\Renderer as B;
 /** @var B $block */ $b = $block; /** @var B $b */
 $i = $b->getItem(); /** @var I $i */
+$p = $i->getProduct(); /** @var P $p */
+$new = $i->getRowTotal(); /** @var float $new */
+$old = $p->getPrice() * $i->getQty(); /** @var float $old */
+$hasDiscount = $old !== $new; /** @var bool $hasDiscount */
 ?>
-<span class="price-excluding-tax" data-label="<?= $b->escapeHtmlAttr(__('Excl. Tax')) ?>">
+<span class="price-excluding-tax" data-label="Excl. Tax">
 	<span class="cart-price">
 		<?= $b->formatPrice($i->getRowTotal()) ?>
 	</span>
