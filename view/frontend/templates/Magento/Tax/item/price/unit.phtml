@@ -8,16 +8,15 @@ use Magento\Tax\Block\Item\Price\Renderer as B;
 /** @var B $block */ $b = $block; /** @var B $b */
 $i = $b->getItem(); /** @var I $i */
 $p = $i->getProduct(); /** @var P $p */
-$new = $p->getFinalPrice(); /** @var float $new */
-$old = $p->getPrice(); /** @var float $old */
+$new = $p->getFinalPrice(); /** @var string $new */
+$old = $p->getPrice(); /** @var string $old */
 $hasDiscount = $old !== $new; /** @var bool $hasDiscount */
 ?>
 <span class='price-excluding-tax' data-label='Excl. Tax'>
-	<span class='cart-price'>
-		<?= $b->formatPrice($i->getRowTotal()) ?>
-	</span>
 	<?=
-		df_cc_n(df_tag('span', df_cc_s('cart-price', !$hasDiscount ? '' : 'final-price'), $b->formatPrice($new)))
-		,!$hasDiscount ? '' : df_tag('span', 'minicart-old-price', $b->formatPrice($old))
+		df_cc_n(
+			df_tag('span', df_cc_s('cart-price', !$hasDiscount ? '' : 'final-price'), $b->formatPrice($new))
+			,!$hasDiscount ? '' : df_tag('span', 'minicart-old-price', $b->formatPrice($old))
+		)
 	?>
 </span>
