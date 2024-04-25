@@ -7,9 +7,9 @@
 <!-- 2024-04-26
 "The `checkout/cart` page should show prices before and after discounts (similar to the mini cart)":
 https://github.com/cabinetsbay/site/issues/143 -->
-		<referenceBlock name="checkout.item.price.row">
+		<referenceBlock name="checkout.item.price.unit">
 			<action method="setTemplate">
-				<argument name="template" xsi:type="string">CabinetsBay_Core::Magento/Tax/item/price/row.phtml</argument>
+				<argument name="template" xsi:type="string">CabinetsBay_Core::Magento/Tax/item/price/unit.phtml</argument>
 			</action>
 		</referenceBlock>
 	</body>
