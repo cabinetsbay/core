@@ -7,18 +7,8 @@ use Magento\Quote\Model\Quote\Item as I;
 /** @var B $block */ $b = $block; /** @var B $b */
 $i = $b->getItem(); /** @var I $i */
 ?>
-<?php if (($b->displayPriceInclTax() || $b->displayBothPrices()) && !$i->getNoSubtotal()) : ?>
-    <span class="price-including-tax" data-label="<?= $b->escapeHtmlAttr(__('Incl. Tax')) ?>">
-        <span class="cart-price">
-            <?= /* @noEscape */ $b->formatPrice($i->getRowTotalInclTax()) ?>
-        </span>
-    </span>
-<?php endif; ?>
-
-<?php if (($b->displayPriceExclTax() || $b->displayBothPrices()) && !$i->getNoSubtotal()) : ?>
-    <span class="price-excluding-tax" data-label="<?= $b->escapeHtmlAttr(__('Excl. Tax')) ?>">
-        <span class="cart-price">
-            <?= /* @noEscape */ $b->formatPrice($i->getRowTotal()) ?>
-        </span>
-    </span>
-<?php endif; ?>
+<span class="price-excluding-tax" data-label="<?= $b->escapeHtmlAttr(__('Excl. Tax')) ?>">
+	<span class="cart-price">
+		<?= $b->formatPrice($i->getRowTotal()) ?>
+	</span>
+</span>
