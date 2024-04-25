@@ -15,8 +15,8 @@ $hasDiscount = $old !== $new; /** @var bool $hasDiscount */
 <span class='price-excluding-tax' data-label='Excl. Tax'>
 	<?=
 		df_cc_n(
-			df_tag('span', df_cc_s('cart-price', !$hasDiscount ? '' : 'final-price'), $b->formatPrice($new))
-			,!$hasDiscount ? '' : df_tag('span', 'minicart-old-price', $b->formatPrice($old))
+			df_tag('span', df_cc_s('cart-price', !$hasDiscount ? '' : 'cb-new-price'), $b->formatPrice($new))
+			,!$hasDiscount ? '' : df_tag('span', 'cb-old-price', $b->formatPrice($old))
 		)
 	?>
 </span>
