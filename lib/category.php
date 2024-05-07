@@ -8,6 +8,6 @@ use Magento\Catalog\Model\Category as C;
  * 		«Ready to Assemble Cabinets»
  * 		«Pre-Assembled Cabinets»
  * 		«Cabinet Organizers & Hardware»
- * @used-by app/design/frontend/Cabinetsbay/cabinetsbay_default/Magento_Catalog/templates/category/header.phtml
+ * @used-by vendor/cabinetsbay/catalog/view/frontend/templates/category/header.phtml
  */
 function cb_category_is_l2(C $c):bool {return 2 === df_category_level($c);}
