@@ -7,15 +7,15 @@ use Sharapov\Cabinetsbay\Block\Category\View as B;
 $id = $b->isRTA() ? 'rta' : 'pa'; /** @var string $id */
 ?>
 <div class='product-page-faq' id='faq-purchase'>
-	<?= df_cms_block_output("product-page-faq-{$id}-welcome") ?>
+	<?= df_cms_block("product-page-faq-{$id}-welcome") ?>
 </div>
 <div class='product-page-faq'>
-	<?= df_cms_block_output("product-page-faq-{$id}-body") ?>
+	<?= df_cms_block("product-page-faq-{$id}-body") ?>
 </div>
 <div class='product-page-how-to-shop mobile-view' id='how-to-shop'>
-	<?= df_cms_block_output("product-page-{$id}-how-to-shop") ?>
+	<?= df_cms_block("product-page-{$id}-how-to-shop") ?>
 	<a href='#products_list' class='scrollTo'>Click here to start shopping</a>
 </div>
 <div class="product-page-info mobile-view">
-	<?= df_cms_block_output("product-page-{$id}-info") ?>
+	<?= df_cms_block("product-page-{$id}-info") ?>
 </div>
