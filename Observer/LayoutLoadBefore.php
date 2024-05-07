@@ -1,5 +1,5 @@
 <?php
-namespace CabinetsBay\Core\Observer;
+namespace CabinetsBay\Catalog\Observer;
 use Magento\Framework\Event\Observer as O;
 use Magento\Framework\Event\ObserverInterface;
 # 2024-04-15 "Add the current category level as a CSS class to `<body>`": https://github.com/cabinetsbay/core/issues/5

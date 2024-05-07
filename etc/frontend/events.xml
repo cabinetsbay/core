@@ -5,6 +5,6 @@
 >
 <!-- 2024-04-15 "Add the current category level as a CSS class to `<body>`": https://github.com/cabinetsbay/core/issues/5 -->
 	<event name='layout_load_before'>
-		<observer instance='CabinetsBay\Core\Observer\LayoutLoadBefore' name='CabinetsBay\Core\Observer\LayoutLoadBefore'/>
+		<observer instance='CabinetsBay\Catalog\Observer\LayoutLoadBefore' name='CabinetsBay\Catalog\Observer\LayoutLoadBefore'/>
 	</event>
 </config>
