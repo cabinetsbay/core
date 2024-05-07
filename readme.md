@@ -5,7 +5,7 @@ A custom module for [cabinetsbay.com](https://cabinetsbay.com) (Magento 2).
 bin/magento maintenance:enable
 rm -rf composer.lock
 composer clear-cache
-composer require cabinetsbay/core:*
+composer require cabinetsbay/catalog:*
 rm -rf var/di var/generation generated/*
 bin/magento setup:upgrade
 bin/magento cache:enable
@@ -27,10 +27,10 @@ bin/magento maintenance:disable
 ## How to upgrade
 ```     
 bin/magento maintenance:enable
-composer remove cabinetsbay/core
+composer remove cabinetsbay/catalog
 rm -rf composer.lock
 composer clear-cache
-composer require cabinetsbay/core:*
+composer require cabinetsbay/catalog:*
 rm -rf var/di var/generation generated/*
 bin/magento setup:upgrade
 bin/magento cache:enable
