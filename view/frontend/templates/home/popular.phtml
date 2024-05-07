@@ -1,0 +1,36 @@
+<?php
+# 2024-05-06 Dmitrii Fediuk https://upwork.com/fl/mage2pro
+# "Refactor `app/design/frontend/Cabinetsbay/cabinetsbay_default/Magento_Theme/templates/homepage.phtml`":
+# https://github.com/cabinetsbay/site/issues/146
+use Magento\Catalog\Model\Category as C;
+use Magento\Catalog\Model\ResourceModel\Category\Collection as CC;
+?>
+<div class="homepage-popular c-products-grid">
+	<?php
+		$cc = df_category_c(array_slice(df_csv_parse_int(df_cfg('cabinetsbay_settings/general/popular_products')), 0, 3))
+			->addAttributeToSelect(['cb_door_sample_link', 'cb_kitchen_price', 'cb_kitchen_set', 'image', 'name'])
+			->joinUrlRewrite()
+		; /** @var CC $cc */
+	?>
+	<?php if (count($cc)) : ?>
+		<?= df_cms_block('home-page-popular-kitchen') ?>
+		<ul> <?php
+		foreach ($cc as $c) {
+			/** @var C $c */
+			print '<li>';
+			print '<a href="' . $c->getUrl() . '">';
+			print '<div>' . $c->getName() . '</div>';
+			if ($c->getData('cb_kitchen_set') != '') {
+			  print '<div class="size-price"><b>' . $c->getData('cb_kitchen_set') . '</b>' . $c->getData('cb_kitchen_price') . '</div>';
+			}
+			try {
+				print '<img src="' . $c->getImageUrl() . '" border="0" />';
+			} catch (E $e) {}
+			print '</a>';
+			print '<div><a href="' . $c->getUrl()
+				. '">Shop cabinets</a><a href="' . $c->getData('cb_door_sample_link').'">Order sample</a></div>';
+			print '</li>';
+		}
+		print '</ul>';
+	endif;  ?>
+</div>
