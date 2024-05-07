@@ -9,9 +9,8 @@ $cc = df_category_c(array_slice(df_csv_parse_int(df_cfg('cabinetsbay_settings/ge
 	->addAttributeToSelect(['cb_door_sample_link', 'cb_kitchen_price', 'cb_kitchen_set', 'image', 'name'])
 	->joinUrlRewrite()
 ; /** @var CC $cc */
-?>
-<div class="homepage-popular c-products-grid">
-	<?php if (count($cc)) : ?>
+if (count($cc)) { ?>
+	<div class="homepage-popular c-products-grid">
 		<?= df_cms_block('home-page-popular-kitchen') ?>
 		<ul> <?php
 		foreach ($cc as $c) {
@@ -31,5 +30,7 @@ $cc = df_category_c(array_slice(df_csv_parse_int(df_cfg('cabinetsbay_settings/ge
 			print '</li>';
 		}
 		print '</ul>';
-	endif;  ?>
-</div>
+		 ?>
+	</div>
+<?php
+}
