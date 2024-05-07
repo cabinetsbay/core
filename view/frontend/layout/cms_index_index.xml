@@ -12,7 +12,7 @@
 "Refactor `app/design/frontend/Cabinetsbay/cabinetsbay_default/Magento_Theme/templates/homepage.phtml`":
 https://github.com/cabinetsbay/site/issues/146 -->
 		<referenceContainer name='content'>
-			<block template='Magento_Theme::homepage.phtml'/>
+			<block template='CabinetsBay_Core::home.phtml'/>
 		</referenceContainer>
 	</body>
 </page>
