@@ -8,7 +8,7 @@
 		<referenceBlock name='authentication-popup' remove='true'/>
 <!-- 2024-03-26 "Delete the `cookie-status` hidden block from the home page": https://github.com/cabinetsbay/core/issues/4 -->
 		<referenceBlock name='cookie-status-check' remove='true'/>
-<!-- 2024-05-07 Dmitrii Fediuk https://upwork.com/fl/mage2pro
+<!-- 2024-05-07
 "Refactor `app/design/frontend/Cabinetsbay/cabinetsbay_default/Magento_Theme/templates/homepage.phtml`":
 https://github.com/cabinetsbay/site/issues/146 -->
 		<referenceContainer name='content'>
