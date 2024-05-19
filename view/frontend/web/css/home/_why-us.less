@@ -1,0 +1,86 @@
+// 2024-05-19 "Improve the frontend home page": https://github.com/cabinetsbay/core/issues/7
+> .homepage-why-us {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: flex-start;
+	align-content: stretch;
+	padding: 0;
+	max-width: 1140px;
+	margin-top: 5em;
+	position: relative;
+	> div {
+		display: block;
+		flex: 0 0 auto;
+		text-align: center;
+		height: 12em !important;
+		font-weight: bold;
+		@media screen and (min-width: 724px) {
+			width: calc(100% / 4);
+			height: calc(100% / 4);
+		}
+		@media screen and (max-width: 723px) {
+			width: calc(100% / 2);
+			height: calc(100% / 2);
+		}
+		@media screen and (max-width: 680px) {
+			height: auto !important;
+			flex: none;
+			display: flex;
+			float: none;
+			width: 100%;
+			background-color: #cbeaec;
+			padding: 1em;
+			border-radius: 2em;
+			margin-bottom: 1em;
+			box-sizing: border-box;
+			padding-left: 1.6em;
+			&.hidden-mobile {
+				display: none;
+			}
+		}
+		> a:hover {
+			text-decoration: none;
+		}
+		& img {
+			height: 60%;
+			width: auto;
+			padding-top: .8em;
+			@media screen and (max-width: 680px) {
+				width: auto;
+				padding-top: 0;
+				height: 3em;
+			}
+		}
+		& div {
+			max-width: 90%;
+			margin: auto;
+			line-height: 1.2em;
+			font-size: 1.3em;
+			color: #000;
+			@media screen and (max-width: 680px) {
+				max-width: 100%;
+				margin-left: 1em;
+				text-align: left;
+			}
+			&.narrow {
+				max-width: 50%;
+			}
+		}
+	}
+	> h2 {
+		display: block;
+		position: absolute;
+		top: -2.6em;
+		margin: 0;
+		width: 100%;
+		text-align: center;
+		@media screen and (max-width: 680px) {
+			top: -2em;
+		}
+	}
+	@media screen and (max-width: 680px) {
+		display: block;
+		margin-top: 2.4em;
+	}
+}
