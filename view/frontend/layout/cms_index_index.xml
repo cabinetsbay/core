@@ -10,7 +10,7 @@
 		<referenceBlock name='cookie-status-check' remove='true'/>
 <!-- 2024-05-07
 "Refactor `app/design/frontend/Cabinetsbay/cabinetsbay_default/Magento_Theme/templates/homepage.phtml`":
-https://github.com/cabinetsbay/site/issues/146 -->
+https://github.com/cabinetsbay/core/issues/8 -->
 		<referenceContainer name='content'>
 			<block template='CabinetsBay_Core::home.phtml'/>
 		</referenceContainer>
