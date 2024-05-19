@@ -20,7 +20,7 @@ if (count(
 			print '<a href="' . $c->getUrl() . '">';
 			print '<div>' . $c->getName() . '</div>';
 			if ($c[A::KITCHEN_SET] != '') {
-			  print '<div class="size-price"><b>' . $c->getData('cb_kitchen_set') . '</b>' . $c[A::KITCHEN_PRICE] . '</div>';
+			  print '<div class="size-price"><b>' . $c[A::KITCHEN_SET] . '</b>' . $c[A::KITCHEN_PRICE] . '</div>';
 			}
 			try {
 				print '<img src="' . $c->getImageUrl() . '" border="0" />';
