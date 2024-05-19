@@ -3,19 +3,13 @@
 // https://github.com/cabinetsbay/site/issues/119
 // 2024-05-19 "Improve the frontend home page": https://github.com/cabinetsbay/core/issues/7
 .cms-home {
+	.columns .column.main {padding-bottom: 2em;}
 	.homepage-grid {
-		margin: 0 auto;
-		max-width: 1140px;
-		position: relative;
+		margin: 0 auto; max-width: 1140px; position: relative;
 		@import 'home/_call-us.less';
 		@import 'home/_popular.less';
 		@import 'home/_why-us.less';
 		@import 'home/_workflow.less';
-		> h2:last-of-type {
-			font-weight: 300;
-		}
-	}
-	.columns .column.main {
-		padding-bottom: 2em;
+		> h2:last-of-type {font-weight: 300;}
 	}
 }
