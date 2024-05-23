@@ -2,6 +2,7 @@
 # 2024-05-06
 # "Refactor `app/design/frontend/Cabinetsbay/cabinetsbay_default/Magento_Theme/templates/homepage.phtml`":
 # https://github.com/cabinetsbay/core/issues/8
+use CabinetsBay\Catalog\B\Featured;
 use Magento\Framework\View\Element\Template as B;
 /** @var B $block */ $b = $block; /** @var B $b */
 ?>
@@ -10,7 +11,10 @@ use Magento\Framework\View\Element\Template as B;
 	<div class="homepage-why-us">
 		<?= df_cc_n(df_cms_block('home-page-why-us'), df_cms_block('home-page-why-us-icon-block')) ?>
 	</div>
-	<?= df_block_output('CabinetsBay_Catalog', 'featured') ?>
+	<?= Featured::p(
+		array_slice(df_csv_parse_int(df_cfg('cabinetsbay_settings/general/popular_products')), 0, 3)
+		,'home-page-popular-kitchen'
+	) ?>
 	<div class="homepage-workflow"><?= df_cms_block('home-page-project-workflow') ?></div>
 	<div class="homepage-affirm-banner">
 		<a href="/financing.html"><img src="<?= $b->getViewFileUrl('images/affirm_banner.svg') ?>"/></a>
