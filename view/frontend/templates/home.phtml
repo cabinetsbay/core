@@ -10,7 +10,7 @@ use Magento\Framework\View\Element\Template as B;
 	<div class="homepage-why-us">
 		<?= df_cc_n(df_cms_block('home-page-why-us'), df_cms_block('home-page-why-us-icon-block')) ?>
 	</div>
-	<?= df_block_output('CabinetsBay_Core', 'home/popular.phtml') ?>
+	<?= df_block_output('CabinetsBay_Catalog', 'popular.phtml') ?>
 	<div class="homepage-workflow"><?= df_cms_block('home-page-project-workflow') ?></div>
 	<div class="homepage-affirm-banner">
 		<a href="/financing.html"><img src="<?= $b->getViewFileUrl('images/affirm_banner.svg') ?>"/></a>
