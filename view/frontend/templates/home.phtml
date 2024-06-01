@@ -13,7 +13,7 @@ use Magento\Framework\View\Element\Template as B;
 	</div>
 	<?= Featured::p(
 		array_slice(df_csv_parse_int(df_cfg('cabinetsbay_settings/general/popular_products')), 0, 3)
-		,'home-page-popular-kitchen'
+		,df_cms_block('home-page-popular-kitchen')
 	) ?>
 	<div class="homepage-workflow"><?= df_cms_block('home-page-project-workflow') ?></div>
 	<div class="homepage-affirm-banner">
