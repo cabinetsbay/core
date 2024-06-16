@@ -9,13 +9,13 @@ define(['jquery', 'domReady!'], function($) {
 	const $img4036 = $('#img4036');
 	const $showimg3411 = $('#showimg3411');
 	const $showimg4036 = $('#showimg4036');
-	$showimg3411.on('onmouseover', function() {
+	$showimg3411.on('mouseover', function() {
 		$img3411.show();
 		$img4036.hide();
 		$showimg3411.addClass('act');
 		$showimg4036.removeClass('act');
 	});
-	$showimg4036.on('onmouseover', function() {
+	$showimg4036.on('mouseover', function() {
 		$img3411.hide();
 		$img4036.show();
 		$showimg3411.removeClass('act');
