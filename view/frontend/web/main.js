@@ -1,6 +1,9 @@
 // 2024-01-01
 // 1) "«jQuery is not defined» on my workstation": https://github.com/cabinetsbay/site/issues/53
 // 2) "Refactor design/head/includes scripts to a Magento module": https://github.com/cabinetsbay/core/issues/1
+// 2024-06-17
+// "The «EXPLORE CABINETS» dropdown menu should switch its image according to the menu item hovered":
+// https://github.com/cabinetsbay/core/issues/9
 define(['jquery', 'domReady!'], function($) {
 	const $img3411 = $('#img3411');
 	const $img4036 = $('#img4036');
