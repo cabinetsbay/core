@@ -4,7 +4,7 @@
 // 2024-06-17
 // "The «EXPLORE CABINETS» dropdown menu should switch its image according to the menu item hovered":
 // https://github.com/cabinetsbay/core/issues/9
-define(['jquery', 'domReady!'], function($) {
+define(['jquery', 'domReady!'], $ => {
 	const $img3411 = $('#img3411');
 	const $img4036 = $('#img4036');
 	const $showimg3411 = $('#showimg3411');
