@@ -21,7 +21,4 @@ define(['jquery', 'domReady!'], $ => {
 		$showimg3411.removeClass('act');
 		$showimg4036.addClass('act');
 	});
-	if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
-		$('.products.wrapper.list').removeClass('products-list').addClass('products-grid');
-	}
 });
