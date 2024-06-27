@@ -11,7 +11,7 @@
 			display: inline-block;
 			float: none;
 			margin: 0;
-			& a {
+			a {
 				color: #fff;
 			}
 		}
@@ -21,7 +21,7 @@
 			-webkit-transition: width 1s; /* For Safari 3.1 to 6.0 */
 			transition: width 1s;
 			padding-left: 20px;
-			& .control {
+			.control {
 				padding: 0;
 				> input {
 					background: transparent;
@@ -37,7 +37,7 @@
 					}
 				}
 			}
-			& .action.search {
+			.action.search {
 				left: -10px;
 				right: auto;
 				width: 1.6em;
@@ -56,7 +56,7 @@
 			&.block-search-focused {
 				width: 30%;
 				max-width: 300px;
-				& .control {
+				.control {
 					border-bottom: 1px solid #fff;
 				}
 			}
@@ -79,11 +79,11 @@
 				color: #fff;
 			}
 		}
-		& .my-account-block {
+		.my-account-block {
 			float: right;
 			padding-left: .8em;
 			line-height: 2.4em;
-			& a {
+			a {
 				color: #fff;
 			}
 		}
@@ -144,7 +144,7 @@
 					}
 				}
 				&:hover {
-					& .explore-menu {
+					.explore-menu {
 						display: table !important;
 					}
 				}
@@ -189,7 +189,7 @@
 							background-color: #fff;
 							border-top: 1px solid #f8f8f8;
 							margin: 0;
-							& a {
+							a {
 								color: #484848;
 								display: block;
 								font-size: 1.6em;
@@ -207,17 +207,17 @@
 								}
 							}
 							&._hasSubmenu.active {
-								& .submenu-toggle {
+								.submenu-toggle {
 									&:before, &:after {
 										transform: rotate(135deg);
 									}
 								}
-								& ul.submenu {
+								ul.submenu {
 									height: auto;
 								}
 							}
 						}
-						& ul.submenu {
+						ul.submenu {
 							height: 0;
 							-webkit-transition: all .5s ease-in-out;
 							-moz-transition: all .5s ease-in-out;
@@ -225,23 +225,23 @@
 							transition: all .5s ease-in-out;
 							padding-left: 0;
 							overflow-y: hidden;
-							& li {
+							li {
 								background-color: #f8f8f8;
 								border-top-color: #f2f2f2;
 								margin-bottom: 0;
 								&:last-of-type {
 									margin-bottom: 0;
 								}
-								& a {
+								a {
 									font-size: 1.2em;
 								}
 							}
 						}
 					}
-					& .link-wrapper {
+					.link-wrapper {
 						position: relative;
 					}
-					& .submenu-toggle {
+					.submenu-toggle {
 						width: 18px;
 						height: 18px;
 						position: absolute;
@@ -272,7 +272,7 @@
 						}
 					}
 				}
-				& .bottom-links {
+				.bottom-links {
 					background-color: #fff;
 					position: absolute;
 					width: 100%;
@@ -280,7 +280,7 @@
 					left: 0;
 					box-shadow: 0 -2px 2px rgba(0, 0, 0, .05);
 					display: flex;
-					& a {
+					a {
 						width: 50%;
 						flex: auto;
 						padding: 1.2em 0;
@@ -298,23 +298,23 @@
 							background-size: 20%;
 							background-position: 15px center;
 							background-repeat: no-repeat;
-							& .text {
+							.text {
 								padding-left: 1.6em;
 							}
 						}
 					}
 				}
 			}
-			& .mobile-navigation-opener {
+			.mobile-navigation-opener {
 				line-height: 1em;
 				float: left;
-				& .toggle-icon {
+				.toggle-icon {
 					position: relative;
 					display: inline-block;
 					vertical-align: middle;
 					width: 22px;
 					height: 20px;
-					& .toggle-icon-inner {
+					.toggle-icon-inner {
 						transition-timing-function: cubic-bezier(.55, .055, .675, .19);
 						transition-duration: 75ms;
 						top: 8px;
@@ -327,7 +327,7 @@
 							bottom: -6px;
 						}
 					}
-					& .toggle-icon-inner, & .toggle-icon-inner:before, & .toggle-icon-inner:after {
+					.toggle-icon-inner, .toggle-icon-inner:before, .toggle-icon-inner:after {
 						content: '';
 						background-color: #3a3a3c;
 						position: absolute;
@@ -340,21 +340,21 @@
 				}
 			}
 			&.active {
-				& .mobile-navigation-popup {
+				.mobile-navigation-popup {
 					left: 0;
 				}
-				& .toggle-icon {
-					& .toggle-icon-inner {
+				.toggle-icon {
+					.toggle-icon-inner {
 						transition-delay: .12s;
 						transition-timing-function: cubic-bezier(.215, .61, .355, 1);
 						transform: rotate(45deg);
 					}
-					& .toggle-icon-inner:before {
+					.toggle-icon-inner:before {
 						top: 0;
 						transition: top 75ms ease, opacity 75ms ease .12s;
 						opacity: 0;
 					}
-					& .toggle-icon-inner:after {
+					.toggle-icon-inner:after {
 						bottom: 0;
 						transition: bottom 75ms ease, transform 75ms cubic-bezier(.215, .61, .355, 1) .12s;
 						transform: rotate(-90deg);
