@@ -4,7 +4,11 @@
 		background-color: #f8f8f8;
 		position: fixed;
 		top: 52px !important;
-		left: -100vw;
+		// 2024-06-27
+		// 1) "The frontend category pages wrongly have a white bar at the left side on narrow screens":
+		// https://github.com/cabinetsbay/core/issues/10
+		// 2) The previous value: `-100vw`.
+		left: -100%;
 		width: 100%;
 		z-index: 99900;
 		-webkit-transition: all .5s ease-in-out;
