@@ -7,7 +7,15 @@
 	align-content: stretch;
 	padding: 0;
 	max-width: 1140px;
-	margin-top: 5em;
+	// 2024-06-27
+	// 1) "Remove too large top margin from the `.homepage-why-us` block": https://github.com/cabinetsbay/core/issues/15
+	// 2) The previous code: `margin-top: 5em;`.
+	@media screen and (max-width: 680px) {
+		display: block;
+		// 2024-06-27
+		// 1) "Remove too large top margin from the `.homepage-why-us` block": https://github.com/cabinetsbay/core/issues/15
+		// 2) The previous code: `margin-top: 2.4em;`.
+	}
 	position: relative;
 	> div {
 		display: block;
@@ -78,11 +86,5 @@
 		@media screen and (max-width: 680px) {
 			top: -2em;
 		}
-	}
-	@media screen and (max-width: 680px) {
-		display: block;
-		// 2024-06-27
-		// 1) "Remove too large top margin from the `.homepage-why-us` block": https://github.com/cabinetsbay/core/issues/15
-		// 2) The previous code: `margin-top: 2.4em;`.
 	}
 }
