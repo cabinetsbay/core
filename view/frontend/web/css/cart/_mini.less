@@ -34,18 +34,20 @@ header.page-header > .header {
 			> .secondary {display: block; height: 30px; width: 30px;}
 		}
 	}
-	.quickcart-wrapper .block-quickcart .block-content-quickcart .quickcart-items-wrapper .quickcart-items .quickcart-product-item {
-		margin-bottom: .6em;
-		.product-item-name {max-width: 85%;}
-		.price-container .price-wrapper .price-excluding-tax {
-			display: block;
-			> .minicart-price {display: block;}
-			> .minicart-old-price > .price {font-weight: normal; text-decoration: line-through;}
-		}
-		span.qty-update {
-			&.item-minus, &.item-plus {font-family: 'icons-blank-theme'; font-size: 2em; line-height: .5em;}
-			&.item-minus:after {content: '\e61a';}
-			&.item-plus:after {content: '\e619';}
+	.quickcart-wrapper .block-quickcart .block-content-quickcart {
+		.quickcart-items-wrapper .quickcart-items .quickcart-product-item {
+			margin-bottom: .6em;
+			.product-item-name {max-width: 85%;}
+			.price-container .price-wrapper .price-excluding-tax {
+				display: block;
+				> .minicart-price {display: block;}
+				> .minicart-old-price > .price {font-weight: normal; text-decoration: line-through;}
+			}
+			span.qty-update {
+				&.item-minus, &.item-plus {font-family: 'icons-blank-theme'; font-size: 2em; line-height: .5em;}
+				&.item-minus:after {content: '\e61a';}
+				&.item-plus:after {content: '\e619';}
+			}
 		}
 	}
 }
