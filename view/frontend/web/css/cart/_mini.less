@@ -50,8 +50,10 @@ header.page-header > .header {
 			> .minicart-price {display: block;}
 			> .minicart-old-price > .price {font-weight: normal; text-decoration: line-through;}
 		}
-		span.qty-update.item-plus, span.qty-update.item-minus {
-			font-family: 'icons-blank-theme'; font-size: 2em; line-height: .5em;
+		span.qty-update {
+			&.item-minus, &.item-plus {
+				font-family: 'icons-blank-theme'; font-size: 2em; line-height: .5em;
+			}
 		}
 		span.qty-update.item-minus:after {content: '\e61a';}
 		span.qty-update.item-plus:after {content: '\e619';}
