@@ -47,6 +47,16 @@ header.page-header > .header {
 		.product-item-name {
 			max-width: 85%;
 		}
+		.price-container .price-wrapper .price-excluding-tax {
+			display: block;
+			> .minicart-price {
+				display: block;
+			}
+			> .minicart-old-price > .price {
+				text-decoration: line-through;
+				font-weight: normal;
+			}
+		}
 	}
 }
 .minicart-items .item-qty {width: 23px !important;}
