@@ -1,3 +1,30 @@
 // 2024-07-08 "Move the cart code to the `CabinetsBay_Core` module": https://github.com/cabinetsbay/site/issues/150
+.cart-summary > .title {
+	font-size: 2.8rem;
+}
+.column.main .cart-summary .block > .title strong {
+	font-size: 1.4rem;
+	font-weight: 800;
+}
+.cart.table-wrapper .col.qty .input-text {
+	padding: 0;
+	border-radius: 0;
+}
+@media screen and (min-width: 768px) {
+	.cart.table-wrapper .item .col.item {
+		padding: 20px 8px 10px;
+	}
+	.cart.table-wrapper .product-item-details {
+		font-size: 1.4em;
+	}
+}
+button, .cart.table-wrapper .actions-toolbar > .action, .action-gift {
+	font-size: 1.8rem;
+	font-weight: 400;
+}
+.block-cart-failed .action.continue, .cart-container .form-cart .action.continue {
+	font-size: 1.8rem;
+	font-weight: 400;
+}
 // 2024-07-08 "Move the mini-cart code to the `CabinetsBay_Core` module": https://github.com/cabinetsbay/site/issues/149
 @import 'cart/_mini.less';
