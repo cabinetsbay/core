@@ -52,5 +52,9 @@ header.page-header > .header {
 		}
 	}
 }
-.minicart-items .item-qty {width: 23px !important;}
+.minicart-items {
+	.item-qty {width: 23px !important;}
+	// 2034-07-08 "A left-top part of the mini-cart border is missing": https://github.com/cabinetsbay/core/issues/16
+	.product {> .product-item-photo, > .product-image-container {margin-left: 1px;}}
+}
 .minicart-items-wrapper .product-item-pricing {min-height: 30px; padding-right: 10px;}
