@@ -40,18 +40,23 @@ header.page-header > .header > .minicart-wrapper {
 				// 2024-07-08 "A left-top part of the mini-cart border is missing": https://github.com/cabinetsbay/core/issues/16
 				> li.product {
 					margin-bottom: .6em;
-					.product-item-name {max-width: 85%;}
-					.price-container .price-wrapper .price-excluding-tax {
-						display: block;
-						> .minicart-price {display: block;}
-						> .minicart-old-price > .price {font-weight: normal; text-decoration: line-through;}
+					> .product {
+						.product-item-name {max-width: 85%;}
+						.price-container .price-wrapper .price-excluding-tax {
+							display: block;
+							> .minicart-price {display: block;}
+							> .minicart-old-price > .price {font-weight: normal; text-decoration: line-through;}
+						}
+						span.qty-update {
+							&.item-minus, &.item-plus {font-family: 'icons-blank-theme'; font-size: 2em; line-height: .5em;}
+							&.item-minus:after {content: '\e61a';}
+							&.item-plus:after {content: '\e619';}
+						}
+						> a.product-item-photo {
+							margin-left: 1px;
+							> .product-image-container {margin-left: 1px;}
+						}
 					}
-					span.qty-update {
-						&.item-minus, &.item-plus {font-family: 'icons-blank-theme'; font-size: 2em; line-height: .5em;}
-						&.item-minus:after {content: '\e61a';}
-						&.item-plus:after {content: '\e619';}
-					}
-					.product-item-photo, .product-image-container {margin-left: 1px;}
 				}
 			}
 		}
