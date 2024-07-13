@@ -22,19 +22,9 @@ header.page-header > .header > .minicart-wrapper {
 		> .counter.qty {@media screen and (max-width: 680px) {height: 20px; line-height: 20px;}}
 
 	}
-	.product .actions {
-		float: none !important;
-		margin: 0 !important;
-		position: absolute;
-		right: 0;
-		text-align: right !important;
-		top: 0;
-		> .secondary {display: block; height: 30px; width: 30px;}
-	}
 	.block-minicart .block-content {
 		> .quickcart-bottom-container {background: #ffffff;}
 		> .minicart-items-wrapper {
-			.product-item-pricing {min-height: 30px; padding-right: 10px;}
 			> ol#mini-cart.minicart-items {
 				.item-qty {width: 23px !important;}
 				// 2024-07-08 "A left-top part of the mini-cart border is missing": https://github.com/cabinetsbay/core/issues/16
@@ -57,6 +47,16 @@ header.page-header > .header > .minicart-wrapper {
 						}
 						> .product-item-details {
 							> .product-item-name {max-width: 85%;}
+							> .actions {
+								float: none !important;
+								margin: 0 !important;
+								position: absolute;
+								right: 0;
+								text-align: right !important;
+								top: 0;
+								> .secondary {display: block; height: 30px; width: 30px;}
+							}
+							> .product-item-pricing {min-height: 30px; padding-right: 10px;}
 						}
 					}
 				}
