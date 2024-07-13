@@ -35,11 +35,6 @@ header.page-header > .header > .minicart-wrapper {
 						> .minicart-price {display: block;}
 						> .minicart-old-price > .price {font-weight: normal; text-decoration: line-through;}
 					}
-					span.qty-update {
-						&.item-minus, &.item-plus {font-family: 'icons-blank-theme'; font-size: 2em; line-height: .5em;}
-						&.item-minus:after {content: '\e61a';}
-						&.item-plus:after {content: '\e619';}
-					}
 					> a.product-item-photo {
 						margin-left: 1px;
 						> .product-image-container {margin-left: 1px;}
@@ -55,7 +50,14 @@ header.page-header > .header > .minicart-wrapper {
 							top: 0;
 							> .secondary {display: block; height: 30px; width: 30px;}
 						}
-						> .product-item-pricing {min-height: 30px; padding-right: 10px;}
+						> .product-item-pricing {
+							min-height: 30px; padding-right: 10px;
+							> .qty > .qty-update {
+								&.item-minus, &.item-plus {font-family: 'icons-blank-theme'; font-size: 2em; line-height: .5em;}
+								&.item-minus:after {content: '\e61a';}
+								&.item-plus:after {content: '\e619';}
+							}
+						}
 					}
 				}
 			}
