@@ -37,11 +37,10 @@ header.page-header > .header > .minicart-wrapper {
 		> .quickcart-bottom-container {background: #ffffff;}
 		> .minicart-items-wrapper {
 			.product-item-pricing {min-height: 30px; padding-right: 10px;}
-			> #mini-cart.minicart-items {
+			> ol#mini-cart.minicart-items {
 				.item-qty {width: 23px !important;}
 				// 2024-07-08 "A left-top part of the mini-cart border is missing": https://github.com/cabinetsbay/core/issues/16
-				.product {> .product-item-photo, > .product-image-container {margin-left: 1px;}}
-				.quickcart-product-item {
+				> li.product {
 					margin-bottom: .6em;
 					.product-item-name {max-width: 85%;}
 					.price-container .price-wrapper .price-excluding-tax {
@@ -54,6 +53,7 @@ header.page-header > .header > .minicart-wrapper {
 						&.item-minus:after {content: '\e61a';}
 						&.item-plus:after {content: '\e619';}
 					}
+					> .product-item-photo, > .product-image-container {margin-left: 1px;}
 				}
 			}
 		}
