@@ -52,9 +52,11 @@ header.page-header > .header {
 		}
 	}
 }
-#mini-cart.minicart-items {
-	.item-qty {width: 23px !important;}
-	// 2024-07-08 "A left-top part of the mini-cart border is missing": https://github.com/cabinetsbay/core/issues/16
-	.product {> .product-item-photo, > .product-image-container {margin-left: 1px;}}
+.minicart-items-wrapper {
+	> #mini-cart.minicart-items {
+		.item-qty {width: 23px !important;}
+		// 2024-07-08 "A left-top part of the mini-cart border is missing": https://github.com/cabinetsbay/core/issues/16
+		.product {> .product-item-photo, > .product-image-container {margin-left: 1px;}}
+	}
+	.product-item-pricing {min-height: 30px; padding-right: 10px;}
 }
-.minicart-items-wrapper .product-item-pricing {min-height: 30px; padding-right: 10px;}
