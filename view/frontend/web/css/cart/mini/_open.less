@@ -24,10 +24,14 @@
 				}
 				> .product-item-pricing {
 					min-height: 30px; padding-right: 10px;
-					> .qty > .qty-update {
-						&.item-minus, &.item-plus {font-family: 'icons-blank-theme'; font-size: 2em; line-height: .5em;}
-						&.item-minus:after {content: '\e61a';}
-						&.item-plus:after {content: '\e619';}
+					> .qty {
+						// 2024-07-20 "Improve the mini-cart appearance": https://github.com/cabinetsbay/core/issues/19
+						> * {line-height: 1.5rem;}
+						> .qty-update {
+							&.item-minus, &.item-plus {font-family: 'icons-blank-theme'; font-size: 2em;}
+							&.item-minus:after {content: '\e61a';}
+							&.item-plus:after {content: '\e619';}
+						}
 					}
 					> .price-container > .price-wrapper > .price-excluding-tax {
 						display: block;
