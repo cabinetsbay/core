@@ -11,6 +11,13 @@ https://mage2.pro/t/6462 -->
     <type name="Magento\Framework\DB\Adapter\SqlVersionProvider">
         <arguments>
             <argument name="supportedVersionPatterns" xsi:type="array">
+<!-- 2024-08-17 Dmitrii Fediuk https://upwork.com/fl/mage2pro
+1) The 2 lines below are duplicated from https://github.com/magento/magento2/blob/2.4.4/app/etc/di.xml#L1854-L1855
+2) Without them, Magento will fail for MySQL:
+«Current version of RDBMS is not supported. Used Version: 5.7.18. Supported versions: MariaDB-(10.2-10.6)»
+on `bin/magento setup:upgrade`:https://github.com/cabinetsbay/core/issues/23 -->
+                <item name="MySQL-8" xsi:type="string">^8\.0\.</item>
+                <item name="MySQL-5.7" xsi:type="string">^5\.7\.</item>
 <!-- 2024-08-16 Dmitrii Fediuk https://upwork.com/fl/mage2pro
 1) "Suppress the «Current version of RDBMS is not supported» error": https://github.com/cabinetsbay/site/issues/160
 2) "Cloudways has stopped to provide a MySQL / MariaDB version compatible with Magento 2.4.4":
