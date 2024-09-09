@@ -14,11 +14,13 @@
 	// 2024-09-09
 	// 1) "The breadcrumbs block is shifted left on frontend pages after the Magento 2.4.4 → 2.4.7-p2 upgrade":
 	// https://github.com/cabinetsbay/core/issues/24
-	// 2) I added `!important` to overcome the `Magento/blank` theme's rule:
+	// 2) I added `!important` to overcome the rules of the `Magento/blank` theme:
 	//		max-width: @layout__max-width;
-	// https://github.com/magento/magento2/blob/2.4.7-p2/app/design/frontend/Magento/blank/web/css/source/_layout.less#L89-L89
+	//		padding-left: @layout-indent__width;
+	//		padding-right: @layout-indent__width;
+	// https://github.com/magento/magento2/blob/2.4.7-p2/app/design/frontend/Magento/blank/web/css/source/_layout.less#L89-L91
 	max-width: 1114px !important;
-	padding: 1em;
+	padding: 1em !important;
 	width: 100%;
 	@media screen and (max-width: 768px) {border-top: none;}
 	@media screen and (max-width: 680px) {display: none;}
